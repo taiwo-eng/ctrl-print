@@ -1,9 +1,12 @@
 import Link from "next/link";
+import { Marquee } from "./components/Marquee";
+import { Footer } from "./components/Footer/Footer";
 
 export default function Home() {
   return (
     <main className="content">
-      <h1 className="heading">CTRL - PRINT</h1>
+      <Marquee />
+      <Footer />
     </main>
   );
 }

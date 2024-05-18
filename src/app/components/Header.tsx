@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Arrow } from "./Arrow";
-import { Firebase } from "./Firebase";
+import { Banner } from "./Banner";
 
 export function Header() {
   const pathname = usePathname();
@@ -18,7 +18,7 @@ export function Header() {
       )}
 
       <header className="header">
-        <Firebase />
+        <Banner />
       </header>
     </>
   );
