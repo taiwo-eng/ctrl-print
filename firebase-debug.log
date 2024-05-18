@@ -1,0 +1,42 @@
+[debug] [2024-05-18T22:50:52.596Z] ----------------------------------------------------------------------
+[debug] [2024-05-18T22:50:52.599Z] Command:       /Users/taiwo/.nvm/versions/node/v22.2.0/bin/node /Users/taiwo/.nvm/versions/node/v22.2.0/bin/firebase apphosting:backends:create --project ctrl-prints --location us-central1
+[debug] [2024-05-18T22:50:52.599Z] CLI Version:   13.9.0
+[debug] [2024-05-18T22:50:52.600Z] Platform:      darwin
+[debug] [2024-05-18T22:50:52.600Z] Node Version:  v22.2.0
+[debug] [2024-05-18T22:50:52.600Z] Time:          Sat May 18 2024 23:50:52 GMT+0100 (British Summer Time)
+[debug] [2024-05-18T22:50:52.600Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-18T22:50:52.608Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/firebaseapphosting.googleapis.com [none]
+[debug] [2024-05-18T22:50:52.608Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:53.675Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/firebaseapphosting.googleapis.com 200
+[debug] [2024-05-18T22:50:53.675Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2024-05-18T22:50:53.675Z] >>> [apiv2][query] GET https://mobilesdk-pa.googleapis.com/v1/accessmanagement/tos:getStatus [none]
+[debug] [2024-05-18T22:50:54.055Z] <<< [apiv2][status] GET https://mobilesdk-pa.googleapis.com/v1/accessmanagement/tos:getStatus 200
+[debug] [2024-05-18T22:50:54.055Z] <<< [apiv2][body] GET https://mobilesdk-pa.googleapis.com/v1/accessmanagement/tos:getStatus {"overallStatus":"ACCEPTED","uTosStatus":{"tos":{"id":"firebase","tosId":"FIREBASE_UNIVERSAL"},"status":"ACCEPTED"},"childTosStatus":[{"tos":{"id":"cloud","tosId":"CLOUD_PLATFORM"},"status":"ACCEPTED"},{"tos":{"id":"firebase_b2b","tosId":"FIREBASE_B2B"},"status":"ACCEPTED"},{"tos":{"id":"universal","tosId":"GOOGLE_APIS"},"status":"ACCEPTED"}],"termsUrl":"https://firebase.google.com/terms","perServiceStatus":[{"tosId":"APP_CHECK","serviceStatus":{"tos":{"id":"app_check","tosId":"APP_CHECK"},"status":"ACCEPTED"}},{"tosId":"APP_HOSTING_TOS","serviceStatus":{"tos":{"id":"app_hosting","tosId":"APP_HOSTING_TOS"},"status":"ACCEPTED"}},{"tosId":"APP_HOSTING_TOS","serviceStatus":{"tos":{"id":"app_hosting","tosId":"APP_HOSTING_TOS"},"status":"ACCEPTED"}},{"tosId":"FIREBASE_CRASHLYTICS_APP_DISTRIBUTION","serviceStatus":{"tos":{"id":"firebase_crashlytics_app_distribution","tosId":"FIREBASE_CRASHLYTICS_APP_DISTRIBUTION"},"status":"ACCEPTED"}},{"tosId":"FIREBASE_DATA_CONNECT","serviceStatus":{"tos":{"id":"data_connect","tosId":"FIREBASE_DATA_CONNECT"},"status":"ACCEPTED"}}]}
+[debug] [2024-05-18T22:50:54.056Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/developerconnect.googleapis.com [none]
+[debug] [2024-05-18T22:50:54.056Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/developerconnect.googleapis.com x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:54.057Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/cloudbuild.googleapis.com [none]
+[debug] [2024-05-18T22:50:54.057Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/cloudbuild.googleapis.com x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:54.059Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/secretmanager.googleapis.com [none]
+[debug] [2024-05-18T22:50:54.059Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/secretmanager.googleapis.com x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:54.061Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/run.googleapis.com [none]
+[debug] [2024-05-18T22:50:54.061Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/run.googleapis.com x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:54.062Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/artifactregistry.googleapis.com [none]
+[debug] [2024-05-18T22:50:54.062Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/artifactregistry.googleapis.com x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:54.064Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/iam.googleapis.com [none]
+[debug] [2024-05-18T22:50:54.064Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/iam.googleapis.com x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:54.920Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/developerconnect.googleapis.com 200
+[debug] [2024-05-18T22:50:54.920Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/developerconnect.googleapis.com [omitted]
+[debug] [2024-05-18T22:50:54.920Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/secretmanager.googleapis.com 200
+[debug] [2024-05-18T22:50:54.920Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/secretmanager.googleapis.com [omitted]
+[debug] [2024-05-18T22:50:54.921Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/cloudbuild.googleapis.com 200
+[debug] [2024-05-18T22:50:54.921Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/cloudbuild.googleapis.com [omitted]
+[debug] [2024-05-18T22:50:54.921Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/run.googleapis.com 200
+[debug] [2024-05-18T22:50:54.922Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/run.googleapis.com [omitted]
+[debug] [2024-05-18T22:50:54.922Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/artifactregistry.googleapis.com 200
+[debug] [2024-05-18T22:50:54.922Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/artifactregistry.googleapis.com [omitted]
+[debug] [2024-05-18T22:50:54.923Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/iam.googleapis.com 200
+[debug] [2024-05-18T22:50:54.923Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ctrl-prints/services/iam.googleapis.com [omitted]
+[debug] [2024-05-18T22:50:54.923Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ctrl-prints/serviceAccounts/firebase-app-hosting-compute@ctrl-prints.iam.gserviceaccount.com:testIamPermissions [none]
+[debug] [2024-05-18T22:50:54.924Z] >>> [apiv2][(partial)header] POST https://iam.googleapis.com/v1/projects/ctrl-prints/serviceAccounts/firebase-app-hosting-compute@ctrl-prints.iam.gserviceaccount.com:testIamPermissions x-goog-quota-user=projects/ctrl-prints
+[debug] [2024-05-18T22:50:54.924Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ctrl-prints/serviceAccounts/firebase-app-hosting-compute@ctrl-prints.iam.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
