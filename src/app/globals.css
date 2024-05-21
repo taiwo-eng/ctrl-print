@@ -325,6 +325,7 @@ body {
   border-radius: 22px;
   padding: 0 48px;
   font-size: 24px;
+  margin-top: 36px;
 
   .footer-rights {
     display: flex;
@@ -338,5 +339,42 @@ body {
 
   .contact-via-email {
     text-decoration: underline;
+  }
+}
+
+.homepage-products {
+  background: #ECECEC;
+  border-radius: 22px;
+  padding: 4em;
+
+  .product-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4em;
+  }
+
+  .product-price {
+    background: #E9DCD5;
+    font-size: 24px;
+    line-height: 36px;
+    padding: 4px 12px 4px 10px;
+    width: 90px;
+  }
+
+  .product-title {
+    font-size: 44px;
+    line-height: 53px;
+    font-weight: 500;
+    width: 483px;
+    height: 159px;
+  }
+
+  .product-description {
+    font-size: 20px;
+    line-height: 30px;
+    width: 483px;
+    height: 120px;
+    font-weight: 100;
   }
 }
