@@ -12,20 +12,6 @@
   --button: #0b151e;
 }
 
-.dark-theme {
-  /* --primary-contrast: #fff;
-  --secondary-contrast: #ffffff99;
-  --background-gradient: linear-gradient(90deg, #0b151e, #0b151e);
-  --background: #0b151e;
-  --muted: rgba(21, 39, 60, 0.6);
-  --surface: #112031;
-  --border: #ffffff20;
-  --top-gradient: #1b72e833;
-  --bottom-gradient-top: #1b72e8;
-  --bottom-gradient-bottom: #1b72e850;
-  --button: linear-gradient(90deg, #ffca28, #f57c00); */
-}
-
 * {
   font-family: "Google Sans";
 }
