@@ -1,21 +1,19 @@
-import Link from "next/link";
+import React from 'react';
 
-export function ProductItem ({ slug }: {slug: string}) {
+export function ProductDetail({ params }: { params: { slug: string } }) {
     return (
-        <div className="product-item">
+        <div className='product-detail'>
+            <div className='details-add-to-cart'>
             <div className="product-summary">
-                <p className="product-price">$200.00</p>
                 <p className="product-title">
-                    <Link href={`/product/${slug}`}>
                     Blue and Pink Mini Agbada with yellow asooke
-                    </Link> </p>
+                </p>
                 <p className="product-description">Our signature Agbada in blue and pink with hand-woven asooke in a contrasting color. 
                 This versatile yet sophisticated loungewear in these colors and bold prints is your new wardrobe staple.</p>
             </div>
-            <div className="product-image">
-                <Link href={`/product/${slug}`}>
-                <img src="./images/products/Product-Image.png" alt="Product Image" />
-                </Link>
+            </div>
+            <div className='image-gallery'>
+
             </div>
         </div>
     )

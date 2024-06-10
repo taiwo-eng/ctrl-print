@@ -11,14 +11,16 @@ export function Header() {
 
   return (
     <>
-      {pathname !== "/" && (
-        <Link className="button back-button" href="/">
-          <Arrow /> Back to home
-        </Link>
-      )}
-
       <header className="header">
-        <Banner />
+        <div className="logo">
+            <Link href="/">
+              <img src="./logo.svg" alt="Ctrl print banner" className="header-logo" />
+              <p>CTRL +PRINT</p>
+            </Link>
+      </div>
+        <div className="cart">
+          <p>CART  &nbsp; &nbsp; (0)</p>
+        </div>
       </header>
     </>
   );

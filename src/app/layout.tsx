@@ -1,18 +1,13 @@
-import type { Metadata } from "next";
-
 import "./globals.css";
 import { Header } from "./components";
+import { Footer } from "./components/Footer";
 
-export const metadata: Metadata = {
-  title: "CTRL PRINT",
-  description: "",
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className="main-app-layout">
       <head>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
@@ -21,10 +16,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="dots" />
         <Header />
         {children}
-        <div className="bottom-gradient" />
+        <Footer />
       </body>
     </html>
   );

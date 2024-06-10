@@ -34,67 +34,33 @@ body {
   padding: 24px;
 }
 
-.dots {
-  /* pointer-events: none;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(
-    circle at center,
-    var(--muted) 2px,
-    transparent 2px
-  );
-  background-size: 30px 30px;
-  background-position: 12px 12px;
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 50%
-  ); */
+a {
+  text-decoration: none;
+  color: #000000;
 }
 
-.top-gradient {
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 25vh;
-  background: linear-gradient(180deg, transparent 0%, var(--top-gradient) 50%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 10vw)); */
-}
-
-.bottom-gradient {
-  /* position: fixed;
-  bottom: 0;
-  width: 90%;
-  height: 900px;
-  margin-bottom: -550px;
-  pointer-events: none;
-  user-select: none;
-  --top: var(--bottom-gradient-top);
-  --bottom: var(--bottom-gradient-bottom);
-  --first: conic-gradient(from 90deg at 0% 50%, var(--top), var(--bottom));
-  --second: conic-gradient(from 270deg at 100% 50%, var(--bottom), var(--top));
-  mask-image: radial-gradient(
-    closest-side at 50% 50%,
-    var(--background),
-    transparent
-  );
-  background-image: var(--first), var(--second);
-  background-position-x: 0%, 100%;
-  background-position-y: 100%, 0%;
-  background-repeat: no-repeat;
-  opacity: 0.4;
-  transform: translateY(-200px) rotate(180deg) translateZ(0px);
-  transform-origin: center center; */
-}
 
 .header {
   width: 100%;
-  img {
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .logo > * {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 30%;
+  }
+
+  .logo p {
+    margin-left: 16px;
+  }
+
+  .cart p {
+    text-decoration: underline;
+    text-underline-offset: 7px;
   }
 }
 
@@ -158,143 +124,10 @@ body {
   font-weight: 400;
 }
 
-.features,
-.data-container {
-  display: grid;
-  gap: 10px;
-}
 
-.features {
-  grid-template-columns: repeat(2, 1fr);
-  text-wrap: balance;
-}
-.data-container {
-  grid-template-columns: repeat(2, 1fr);
-  text-wrap: pretty;
-}
-
-.card {
-  flex-direction: column;
-  padding: 24px;
-  gap: 12px;
-  max-width: 360px;
-}
-
-.card h2 {
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 500;
-  letter-spacing: -2%;
-}
-.card p {
-  font-size: 13px;
-  line-height: 1.5;
-  color: var(--secondary-contrast);
-  letter-spacing: -1%;
-}
-.link,
-.card p a {
-  color: var(--primary-contrast);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.links-container {
-  padding-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.links a {
-  padding: 14px 15px;
-  color: var(--primary-contrast);
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-}
-
-.links a,
-.card {
-  position: relative;
-  border-radius: 24px;
-  background: var(--surface);
-  backdrop-filter: blur(10px);
-  display: flex;
-}
-
-.links a::before,
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 24px;
-  padding: 1px;
-  background: linear-gradient(var(--border), transparent 30%);
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
-.card:not(:first-child)::after,
-.links a:not(:first-child)::after {
-  content: "";
-  top: 0;
-  height: 100%;
-  background: var(--surface);
-  position: absolute;
-  pointer-events: none;
-}
-
-.card:not(:first-child)::after {
-  width: 10px;
-  left: -10px;
-  mask: url("/between-cards.svg") no-repeat center / contain;
-  -webkit-mask: url("/between-cards.svg") no-repeat center / contain;
-}
-
-.links a:not(:first-child)::after {
-  width: 30px;
-  left: calc(-20px);
-  mask: url("/between-links.svg") no-repeat center / contain;
-  -webkit-mask: url("/between-links.svg") no-repeat center / contain;
-}
-
-@media only screen and (max-width: 1023px) {
-  .heading {
-    font-size: 36px;
-  }
-  .back-button {
-    top: 10px;
-    left: 10px;
-  }
-  .features,
-  .data-container {
-    grid-template-columns: 1fr;
-  }
-  .top-gradient,
-  .card::after,
-  .links a::after {
-    display: none;
-  }
-  .bottom-gradient {
-    width: 150%;
-    height: 400px;
-    margin-bottom: -450px;
-  }
+.home-banner {
+  width: 100%;
+  margin-bottom: 36px;
 }
 
 .marquee {

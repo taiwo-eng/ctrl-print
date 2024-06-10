@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 export function Banner() {
   return (
-    <img src="./ctrl-print.svg" alt="Ctrl print banner" />
+    <img src="./ctrl-print.svg" alt="Ctrl print banner" className="home-banner" />
   );
 }
