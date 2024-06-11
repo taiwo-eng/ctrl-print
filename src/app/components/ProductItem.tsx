@@ -14,7 +14,7 @@ export function ProductItem ({ slug }: {slug: string}) {
             </div>
             <div className="product-image">
                 <Link href={`/product/${slug}`}>
-                <img src="./images/products/Product-Image.png" alt="Product Image" />
+                <img src={`./images/products/product-${slug}.JPG`} alt="Product Image" />
                 </Link>
             </div>
         </div>
