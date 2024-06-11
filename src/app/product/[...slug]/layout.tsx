@@ -7,7 +7,9 @@ export const metadata: Metadata = {
     description: "",
   };
 
-export default function ProductDetailLayout({ children }) {
+export default function ProductDetailLayout({
+    children,
+  }: Readonly<{ children: React.ReactNode }>) {
     return (
         <section>
             {children}
