@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Header } from "./components";
 import { Footer } from "./components/Footer";
+import CartContext from "./context/cart.context";
 
 
 export default function RootLayout({
@@ -16,9 +17,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <CartContext>
+          <Header />
+          {children}
+          <Footer />
+        </CartContext>
       </body>
     </html>
   );

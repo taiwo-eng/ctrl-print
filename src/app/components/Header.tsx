@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { Arrow } from "./Arrow";
-import { Banner } from "./Banner";
 import Image from "next/image";
+import { useContext } from "react";
+import { CartItemsContext } from "../context/cart.context";
 
 export function Header() {
   const pathname = usePathname();
-
+  const { cartItems } = useContext(CartItemsContext);
   return (
     <>
       <header className="header">
@@ -20,7 +20,7 @@ export function Header() {
             </Link>
       </div>
         <div className="cart">
-          <p>CART  &nbsp; &nbsp; (0)</p>
+          <p>CART  &nbsp; &nbsp; {cartItems.length}</p>
         </div>
       </header>
     </>

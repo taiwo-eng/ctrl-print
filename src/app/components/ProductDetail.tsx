@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { CartItemsContext } from '../context/cart.context';
 
 export function ProductDetail({ params }: { params: { slug: string } }) {
     const [itemCount, setItemCount] = useState(1)
@@ -9,6 +10,11 @@ export function ProductDetail({ params }: { params: { slug: string } }) {
         l: false,
         xl: false
     });
+    const { setCartItems } = useContext(CartItemsContext);
+
+    function handleAddToCart () {
+        setCartItems((prevState: []) => ([...prevState, {item: 'Blue and Pink Mini Agbada', size: 'Medium', price: '$200', quantity: itemCount}]))
+    }
     return (
         <div className='product-detail'>
             <div className='details-add-to-cart'>
@@ -33,6 +39,10 @@ export function ProductDetail({ params }: { params: { slug: string } }) {
                     <span className={isSelected.l ? 'selected-L': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({l: !isSelected.l, m: false, s: false, xl: false}))}>L</span>
                     <span className={isSelected.xl ? 'selected-XL': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({xl: !isSelected.xl, m: false, l: false, s: false}))}>XL</span>
                 </div>
+            </div>
+            <div className='price_add-to-cart'>
+                <p className='item-price'>$200</p>
+                <p className='add-to-cart' onClick={() => handleAddToCart()}>ADD TO CART</p>
             </div>
             </div>
             <div className='image-gallery'>

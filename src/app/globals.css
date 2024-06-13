@@ -328,4 +328,33 @@ a {
       pointer-events: none;
     }
   }
+
+  .price_add-to-cart {
+    margin-top: 36px;
+    width: 680px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px dashed #E6E6E6;
+    border-radius: 22px;
+    padding: 0 24px;
+
+    .item-price {
+      margin: 24px 0;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 48px;
+      text-align: left;
+
+    }
+
+    .add-to-cart {
+      text-decoration: underline;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 21.6px;
+      color: #9E4920;
+      cursor: pointer;
+    }
+  }
 }
