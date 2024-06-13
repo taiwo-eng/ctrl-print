@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { Arrow } from "./Arrow";
 import { Banner } from "./Banner";
+import Image from "next/image";
 
 export function Header() {
   const pathname = usePathname();
@@ -14,7 +15,7 @@ export function Header() {
       <header className="header">
         <div className="logo">
             <Link href="/">
-              <img src="./logo.svg" alt="Ctrl print banner" className="header-logo" />
+              <Image src="./logo.svg" alt="Ctrl print banner" width={100} height={100} className="header-logo" />
               <p>CTRL +PRINT</p>
             </Link>
       </div>
