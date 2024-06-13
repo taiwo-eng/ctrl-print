@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function ProductItem ({ slug }: {slug: string}) {
@@ -14,7 +15,7 @@ export function ProductItem ({ slug }: {slug: string}) {
             </div>
             <div className="product-image">
                 <Link href={`/product/${slug}`}>
-                <img src={`./images/products/product-${slug}.JPG`} alt="Product Image" />
+                <Image src={`/images/products/product-${slug}.JPG`} width={450} height={650} alt="Product Image" />
                 </Link>
             </div>
         </div>

@@ -168,9 +168,13 @@ a {
 
   .product-item {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 4em;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 24em;
+  }
+
+  .product-item:nth-child(1) {
+    margin-top: 0;
   }
 
   .product-price {
@@ -195,9 +199,5 @@ a {
     width: 483px;
     height: 120px;
     font-weight: 100;
-  }
-
-  .product-image img{
-    width: 100%;
   }
 }

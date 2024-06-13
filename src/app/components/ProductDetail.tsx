@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export function ProductDetail({ params }: { params: { slug: string } }) {
@@ -13,7 +14,7 @@ export function ProductDetail({ params }: { params: { slug: string } }) {
             </div>
             </div>
             <div className='image-gallery'>
-
+            <Image src={`/images/products/product-${params.slug}.JPG`} width={450} height={650} alt="Product Image" />
             </div>
         </div>
     )
