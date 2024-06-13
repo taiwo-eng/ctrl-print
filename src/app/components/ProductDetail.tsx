@@ -26,10 +26,12 @@ export function ProductDetail({ params }: { params: { slug: string } }) {
                     <span aria-disabled={itemCount > 10} onClick={() => setItemCount(itemCount + 1)} className='increase-count'>+</span>
                 </div>
                 <div className='size-select'>
-                    <span className={isSelected.s ? 'selected-S': 'not-selected'} onClick={() => setIsSelected((prevState) => ({...prevState, s: !isSelected.s}))}>S</span>
-                    <span className={isSelected.m ? 'selected-M': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({...prevState, m: !isSelected.m}))}>M</span>
-                    <span className={isSelected.l ? 'selected-L': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({...prevState, l: !isSelected.l}))}>L</span>
-                    <span className={isSelected.xl ? 'selected-XL': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({...prevState, xl: !isSelected.xl}))}>XL</span>
+                    <span className={isSelected.s ? 'selected-S': 'not-selected'} onClick={() => setIsSelected((prevState) => (
+                        {s: !isSelected.s, m: false, l: false, xl: false}
+                        ))}>S</span>
+                    <span className={isSelected.m ? 'selected-M': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({m: !isSelected.m, s: false, l: false, xl: false}))}>M</span>
+                    <span className={isSelected.l ? 'selected-L': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({l: !isSelected.l, m: false, s: false, xl: false}))}>L</span>
+                    <span className={isSelected.xl ? 'selected-XL': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({xl: !isSelected.xl, m: false, l: false, s: false}))}>XL</span>
                 </div>
             </div>
             </div>
