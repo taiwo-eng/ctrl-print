@@ -240,6 +240,42 @@ a {
       border: 1px solid #E6E6E6;
       padding: 16px;
       border-radius: 40px;
+      margin-right: 32px;
+    }
+    .size-select {
+      font-size: 24px;
+      line-height: 21.8px;
+      display: flex;
+      align-items: center;
+      width: 250px;
+      border: 1px solid #E6E6E6;
+      border-radius: 40px;
+    }
+
+    .size-select span {
+      width: 62.5px;
+      height: 54px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .size-select span.selected-S{
+      background: #E9DCD5;
+      border-top-left-radius: inherit;
+      border-bottom-left-radius: inherit;
+    }
+
+    .size-select span.selected-M, .size-select span.selected-L{
+      background: #E9DCD5;
+    }
+
+    .size-select span.selected-XL{
+      background: #E9DCD5;
+      border-top-right-radius: inherit;
+      border-bottom-right-radius: inherit;
     }
 
     .item-count .reduce-count, .item-count .increase-count {
