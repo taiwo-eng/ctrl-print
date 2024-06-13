@@ -1,6 +1,7 @@
 export function Marquee() {
     return (
         <div className="marquee">
+            <p>
             <span className="asterisk">*</span>
             <span>
              ISSUE_001 
@@ -25,6 +26,7 @@ export function Marquee() {
             <span>
             MADE IN LAGOS
             </span>
+            </p>
         </div>
     )
 }
