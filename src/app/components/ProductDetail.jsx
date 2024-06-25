@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React, { useContext, useState } from 'react';
 import { CartItemsContext } from '../context/cart.context';
 
-export function ProductDetail({ params }: { params: { slug: string } }) {
+export function ProductDetail({ params }) {
     const [itemCount, setItemCount] = useState(1)
     const [isSelected, setIsSelected] = useState({
         s: false,
@@ -13,7 +13,7 @@ export function ProductDetail({ params }: { params: { slug: string } }) {
     const { setCartItems } = useContext(CartItemsContext);
 
     function handleAddToCart () {
-        setCartItems((prevState: []) => ([...prevState, {slug: params.slug, item: `item-${params.slug}`, size: 'Medium', price: `${200}.${params.slug}0`, quantity: itemCount}]))
+        setCartItems((prevState) => ([...prevState, {slug: params.slug, item: `item-${params.slug}`, size: 'Medium', price: `${200}.${params.slug}0`, quantity: itemCount}]))
     }
     return (
         <div className='product-detail'>

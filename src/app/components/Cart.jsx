@@ -9,13 +9,13 @@ export default function Cart() {
 
 
     function calculateSubtotal() {
-        const sumWithInitial = cartItems.reduce((accumulator: number, currentValue: {price: string}) => accumulator + parseFloat(currentValue.price),
+        const sumWithInitial = cartItems.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue.price),
         0)
         return sumWithInitial;
     }
     return (
         <div className={`cart ${cartOpen ? '-opened' : '-closed'}`}>
-            {cartItems.map((item: {slug: number, size: string, item: string, price: string}) => (
+            {cartItems.map((item) => (
                 <div className="cart-item" key={item.slug}>
                     <div className="product-info_thumbnail">
                     <Image className="thumbnail" src={`/images/products/product-${item.slug}.JPG`} width={113} height={113} alt="Product Thumbnail" />
