@@ -6,10 +6,11 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useContext } from "react";
 import { CartItemsContext } from "../context/cart.context";
+import Cart from "./Cart";
 
 export function Header() {
   const pathname = usePathname();
-  const { cartItems } = useContext(CartItemsContext);
+  const { cartItems, cartOpen, setCartOpen } = useContext(CartItemsContext);
   return (
     <>
       <header className="header">
@@ -19,10 +20,11 @@ export function Header() {
               <p>CTRL +PRINT</p>
             </Link>
       </div>
-        <div className="cart">
-          <p>CART  &nbsp; &nbsp; {cartItems.length}</p>
+        <div className="toggle-cart">
+          <p onClick={() => setCartOpen(!cartOpen)}>CART  &nbsp; &nbsp; {cartItems.length}</p>
         </div>
       </header>
+      {cartOpen && <Cart />}
     </>
   );
 }

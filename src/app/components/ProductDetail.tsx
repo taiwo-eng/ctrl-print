@@ -13,7 +13,7 @@ export function ProductDetail({ params }: { params: { slug: string } }) {
     const { setCartItems } = useContext(CartItemsContext);
 
     function handleAddToCart () {
-        setCartItems((prevState: []) => ([...prevState, {item: 'Blue and Pink Mini Agbada', size: 'Medium', price: '$200', quantity: itemCount}]))
+        setCartItems((prevState: []) => ([...prevState, {slug: params.slug, item: `item-${params.slug}`, size: 'Medium', price: `${200}.${params.slug}0`, quantity: itemCount}]))
     }
     return (
         <div className='product-detail'>
@@ -32,12 +32,12 @@ export function ProductDetail({ params }: { params: { slug: string } }) {
                     <span aria-disabled={itemCount > 10} onClick={() => setItemCount(itemCount + 1)} className='increase-count'>+</span>
                 </div>
                 <div className='size-select'>
-                    <span className={isSelected.s ? 'selected-S': 'not-selected'} onClick={() => setIsSelected((prevState) => (
+                    <span className={isSelected.s ? 'selected-S': 'not-selected'} onClick={() => setIsSelected(() => (
                         {s: !isSelected.s, m: false, l: false, xl: false}
                         ))}>S</span>
-                    <span className={isSelected.m ? 'selected-M': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({m: !isSelected.m, s: false, l: false, xl: false}))}>M</span>
-                    <span className={isSelected.l ? 'selected-L': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({l: !isSelected.l, m: false, s: false, xl: false}))}>L</span>
-                    <span className={isSelected.xl ? 'selected-XL': 'not-selected'}  onClick={() => setIsSelected((prevState) => ({xl: !isSelected.xl, m: false, l: false, s: false}))}>XL</span>
+                    <span className={isSelected.m ? 'selected-M': 'not-selected'}  onClick={() => setIsSelected(() => ({m: !isSelected.m, s: false, l: false, xl: false}))}>M</span>
+                    <span className={isSelected.l ? 'selected-L': 'not-selected'}  onClick={() => setIsSelected(() => ({l: !isSelected.l, m: false, s: false, xl: false}))}>L</span>
+                    <span className={isSelected.xl ? 'selected-XL': 'not-selected'}  onClick={() => setIsSelected(() => ({xl: !isSelected.xl, m: false, l: false, s: false}))}>XL</span>
                 </div>
             </div>
             <div className='price_add-to-cart'>
