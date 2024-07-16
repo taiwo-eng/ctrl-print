@@ -27,7 +27,7 @@ export default function Cart() {
 
     async function handleCreateOrder() {
         try {
-            const response = await fetch("http://127.0.0.1:5001/ctrl-prints/us-central1/createOrder", {
+            const response = await fetch("https://createorder-6sl3ws34aa-uc.a.run.app", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export default function Cart() {
     async function handleApproveOrder(data, actions) {
             try {
               const response = await fetch(
-                `http://127.0.0.1:5001/ctrl-prints/us-central1/captureOrder`,
+                `https://captureorder-6sl3ws34aa-uc.a.run.app`,
                 {
                   method: "POST",
                   headers: {
