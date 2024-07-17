@@ -425,3 +425,11 @@ a {
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
 }
+
+.terms-conditions-page {
+  margin: 100px 200px;
+
+  h1 {
+    font-size: 2em;
+  }
+}

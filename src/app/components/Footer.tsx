@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 /* eslint-disable @next/next/no-img-element */
 export function Footer () {
     return (
@@ -7,7 +9,11 @@ export function Footer () {
                 <p>ALL RIGHTS RESERVED</p>
             </div>
             <div className="contact-via-email">
-                <p>MAIL ME</p>
+                <p>
+                    <Link href={`/terms-conditions`}>
+                    Terms & Conditions
+                </Link>
+                </p>
             </div>
         </div>
     )
