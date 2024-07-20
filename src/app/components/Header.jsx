@@ -22,9 +22,9 @@ export function Header() {
       </div>
         <div className="toggle-cart">
           <p onClick={() => setCartOpen(!cartOpen)}>CART  &nbsp; &nbsp; {cartItems.length}</p>
+          {cartOpen && <Cart />}
         </div>
       </header>
-      {cartOpen && <Cart />}
     </>
   );
 }

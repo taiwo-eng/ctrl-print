@@ -361,9 +361,18 @@ a {
 
 .toggle-cart {
   cursor: pointer;
+  position: absolute;
+    right: 32px;
+    z-index: 999;
+    background: transparent;
+}
+
+.toggle-cart p {
+  text-align: right;
 }
 
 .cart {
+  background: white;
   width: 500px;
   border: 1px solid #E6E6E6;
   border-radius: 22px;
@@ -424,6 +433,10 @@ a {
   text-align: center;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+}
+
+.cart-checkout p {
+  text-align: unset;
 }
 
 .terms-conditions-page {
