@@ -122,16 +122,16 @@ a {
 }
 .marquee p {
   height: 30px;
-  font-size: 14px;
+  font-size: 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   -moz-transform: translateX(100%);
   -webkit-transform: translateX(100%);
   transform: translateX(100%);
-  -moz-animation: scroll-left 4s linear infinite;
-  -webkit-animation: scroll-left 4s linear infinite;
-  animation: scroll-left 15s linear infinite;
+  -moz-animation: scroll-left 60s linear infinite;
+  -webkit-animation: scroll-left 60s linear infinite;
+  animation: scroll-left 60s linear infinite;
   span {
     margin-right: 21px;
   }

@@ -13,14 +13,14 @@ export function ProductDetail({ params }) {
     const { setCartItems } = useContext(CartItemsContext);
 
     function handleAddToCart () {
-        setCartItems((prevState) => ([...prevState, {slug: params.slug, item: `item-${params.slug}`, size: 'Medium', price: `${200}.${params.slug}0`, quantity: itemCount}]))
+        setCartItems((prevState) => ([...prevState, {slug: params.slug[0], item: `${params.slug[1]}`, size: 'Medium', price: `${200}.${params.slug[0]}0`, quantity: itemCount}]))
     }
     return (
         <div className='product-detail'>
             <div className='details-add-to-cart'>
             <div className="product-summary">
                 <p className="product-title">
-                    Blue and Pink Mini Agbada with yellow asooke
+                    {params.slug[1].split("%20").join(" ")}
                 </p>
                 <p className="product-description">Our signature Agbada in blue and pink with hand-woven asooke in a contrasting color. 
                 This versatile yet sophisticated loungewear in these colors and bold prints is your new wardrobe staple.</p>
@@ -46,7 +46,7 @@ export function ProductDetail({ params }) {
             </div>
             </div>
             <div className='image-gallery'>
-            <Image src={`/images/products/product-${params.slug}.JPG`} width={350} height={450} alt="Product Image" />
+            <Image src={`/images/products/product-${params.slug[0]}.JPG`} width={350} height={450} alt="Product Image" />
             </div>
         </div>
     )

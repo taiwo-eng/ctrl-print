@@ -4,7 +4,7 @@ export function Marquee() {
             <p>
             <span className="asterisk">*</span>
             <span>
-             ISSUE_001 
+             MADE IN AFRICA 
             </span>
             <span className="asterisk">*</span>
             <span>
@@ -20,11 +20,11 @@ export function Marquee() {
             </span>
             <span className="asterisk">*</span>
             <span>
-            STARTING FROM $80 
+            15% OFF YOUR FIRST ORDER
             </span>
             <span className="asterisk">*</span>
             <span>
-            MADE IN LAGOS
+            JOIN OUR MAILING LIST
             </span>
             </p>
         </div>
