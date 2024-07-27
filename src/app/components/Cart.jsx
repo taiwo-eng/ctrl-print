@@ -122,7 +122,7 @@ export default function Cart() {
                     <div className="product-info_thumbnail">
                     <Image className="thumbnail" src={`/images/products/product-${item.slug}.JPG`} width={113} height={113} alt="Product Thumbnail" />
                     <div className="info">
-                        <p>{item.item}</p>
+                        <p>{item.item.split("%20").join(" ")}</p>
                         <p>{item.size}</p>
                         <p>${item.price}</p>
                     </div>
@@ -143,7 +143,7 @@ export default function Cart() {
                 <div className="total">
                     <p>TOTAL</p>
                     <p>${calculateSubtotal() + 4.99}
-                        <p>Including VAT</p>
+                        <p className="vat-note">Including VAT</p>
                     </p>
                 </div>
             </div>
