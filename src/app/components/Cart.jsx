@@ -136,13 +136,9 @@ export default function Cart() {
                     <p>SUBTOTAL</p>
                     <p>${calculateSubtotal()}</p>
                 </div>
-                <div className="shipping">
-                    <p>SHIPPING</p>
-                    <p>$4.99</p>
-                </div>
                 <div className="total">
                     <p>TOTAL</p>
-                    <p>${calculateSubtotal() + 4.99}
+                    <p>${calculateSubtotal()}
                         <p className="vat-note">Including VAT</p>
                     </p>
                 </div>
