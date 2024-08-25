@@ -10,7 +10,7 @@ export function HomePageProducts () {
 
     return (
         <div className="homepage-products">
-            {products.map((product: { name: string, id: string, description: string}) => <ProductItem description={product.description} name={product.name} key={product.id} slug={product.id} />)}
+            {products.map((product) => <ProductItem description={product.description} name={product.name} key={product.id} slug={product.id} />)}
         </div>
     )
 }
