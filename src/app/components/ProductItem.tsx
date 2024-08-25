@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export function ProductItem ({ slug, name }: {slug: string, name: string}) {
+export function ProductItem ({ slug, name, description }: {slug: string, name: string, description: string}) {
     return (
         <div className="product-item">
             <div className="product-summary">
@@ -10,8 +10,7 @@ export function ProductItem ({ slug, name }: {slug: string, name: string}) {
                     <Link href={`/product/${slug}/${name}`}>
                         {name}
                     </Link> </p>
-                <p className="product-description">Our signature Agbada in blue and pink with hand-woven asooke in a contrasting color. 
-                This versatile yet sophisticated loungewear in these colors and bold prints is your new wardrobe staple.</p>
+                <p className="product-description">{description}</p>
             </div>
             <div className="product-image">
                 <Link href={`/product/${slug}/${name}`}>

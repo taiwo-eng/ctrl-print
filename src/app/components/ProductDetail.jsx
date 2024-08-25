@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React, { useContext, useState } from 'react';
 import { CartItemsContext } from '../context/cart.context';
+import { ProductItemsContext } from '../context/product.context';
+import YouMightAlsoLike from './YouMightAlsoLike';
 
 export function ProductDetail({ params }) {
     const [itemCount, setItemCount] = useState(1)
@@ -11,19 +13,20 @@ export function ProductDetail({ params }) {
         xl: false
     });
     const { setCartItems } = useContext(CartItemsContext);
+    const { products } = useContext(ProductItemsContext);
 
     function handleAddToCart () {
         setCartItems((prevState) => ([...prevState, {slug: params.slug[0], item: `${params.slug[1]}`, size: 'Medium', price: `${200}.${params.slug[0]}0`, quantity: itemCount}]))
     }
     return (
-        <div className='product-detail'>
+        <>
+            <div className='product-detail'>
             <div className='details-add-to-cart'>
             <div className="product-summary">
                 <p className="product-title">
-                    {params.slug[1].split("%20").join(" ")}
+                    {params.slug[1].replace('%3A', ": ").split("%20").join(" ")}
                 </p>
-                <p className="product-description">Our signature Agbada in blue and pink with hand-woven asooke in a contrasting color. 
-                This versatile yet sophisticated loungewear in these colors and bold prints is your new wardrobe staple.</p>
+                <p className="product-description">{products[params.slug[0]].description}</p>
             </div>
             <div className='item-count_size-selection'>
                 <div className='item-count'>
@@ -49,5 +52,7 @@ export function ProductDetail({ params }) {
             <Image src={`/images/products/product-${params.slug[0]}.JPG`} width={350} height={450} alt="Product Image" />
             </div>
         </div>
+        <YouMightAlsoLike exclude={params.slug[0]} />
+        </>
     )
 }
