@@ -26,7 +26,7 @@ export function ProductDetail({ params }) {
                 <p className="product-title">
                     {params.slug[1].replace('%3A', ": ").split("%20").join(" ")}
                 </p>
-                <p className="product-description">{products[params.slug[0]].description}</p>
+                <p className="product-description">{products[params.slug[0] - 1].description}</p>
             </div>
             <div className='item-count_size-selection'>
                 <div className='item-count'>
