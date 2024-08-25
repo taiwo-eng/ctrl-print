@@ -18,6 +18,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/Cart.jsx", "src/app/components/Header.jsx", "src/app/components/ProductDetail.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/components/Cart.jsx", "src/app/components/Header.jsx", "src/app/components/ProductDetail.jsx", "src/app/components/HomePageProducts.jsx", "src/app/components/YouMightAlsoLike.jsx"],
   "exclude": ["node_modules"]
 }
