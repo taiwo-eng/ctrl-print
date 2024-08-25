@@ -3,6 +3,7 @@
 import React, { useContext } from 'react';
 import { ProductItemsContext } from '../context/product.context';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function YouMightAlsoLike({ exclude }) {
     const { products } = useContext(ProductItemsContext);
@@ -18,8 +19,11 @@ export default function YouMightAlsoLike({ exclude }) {
             <div className='product-card__container'>
             {products.filter((product) => product.id !== exclude && product.id < 7).map((product) => (
                <div key={product.id} className='product-card'>
-                <Image src={`/images/products/product-${product.id}.JPG`} width={300} height={250} className='image' alt="Product Image" />
-                <p className='name'>{formatName(product)}</p>
+                <Image src={`/images/products/product-${product.id}.JPG`} width={300} height={350} className='image' alt="Product Image" />
+                <p className="name">
+                    <Link href={`/product/${product.id}/${product.name}`}>
+                    {formatName(product)}
+                    </Link> </p>
                </div>     
             ))}
             </div>

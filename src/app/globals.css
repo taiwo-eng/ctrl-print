@@ -362,6 +362,7 @@ a {
 }
 
 .you-might-also-like {
+  margin-top: 80px;
   .section-title {
     font-size: 22px;
     padding: 0 80px;

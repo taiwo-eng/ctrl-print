@@ -16,7 +16,7 @@ export function ProductDetail({ params }) {
     const { products } = useContext(ProductItemsContext);
 
     function handleAddToCart () {
-        setCartItems((prevState) => ([...prevState, {slug: params.slug[0], item: `${params.slug[1]}`, size: 'Medium', price: `${200}.${params.slug[0]}0`, quantity: itemCount}]))
+        setCartItems((prevState) => ([...prevState, {slug: params.slug[0], item: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`, price: `${200}.${params.slug[0]}0`, quantity: itemCount}]))
     }
     return (
         <>
@@ -34,14 +34,14 @@ export function ProductDetail({ params }) {
                     <span>{itemCount}</span>
                     <span aria-disabled={itemCount > 10} onClick={() => setItemCount(itemCount + 1)} className='increase-count'>+</span>
                 </div>
-                <div className='size-select'>
+                {/* <div className='size-select'>
                     <span className={isSelected.s ? 'selected-S': 'not-selected'} onClick={() => setIsSelected(() => (
                         {s: !isSelected.s, m: false, l: false, xl: false}
                         ))}>S</span>
                     <span className={isSelected.m ? 'selected-M': 'not-selected'}  onClick={() => setIsSelected(() => ({m: !isSelected.m, s: false, l: false, xl: false}))}>M</span>
                     <span className={isSelected.l ? 'selected-L': 'not-selected'}  onClick={() => setIsSelected(() => ({l: !isSelected.l, m: false, s: false, xl: false}))}>L</span>
                     <span className={isSelected.xl ? 'selected-XL': 'not-selected'}  onClick={() => setIsSelected(() => ({xl: !isSelected.xl, m: false, l: false, s: false}))}>XL</span>
-                </div>
+                </div> */}
             </div>
             <div className='price_add-to-cart'>
                 <p className='item-price'>$200</p>
