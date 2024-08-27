@@ -1,15 +1,30 @@
 "use client";
 
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { CartItemsContext } from "../context/cart.context";
 import Image from "next/image";
 import { useRouter } from 'next/navigation'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function Cart() {
-    const { cartItems, cartOpen, setCartItems } = useContext(CartItemsContext);
+    const { cartItems, cartOpen, setCartItems, setCartOpen } = useContext(CartItemsContext);
     const [showPaypal, setShowPaypal] = useState(false)
     const router = useRouter();
+    const cartRef = useRef(null);
+
+    useEffect(() => {
+  
+      const handleClickOutside = (event) => {
+        if (cartOpen && !cartRef.current.contains(event.target)) {
+          setCartOpen(false);
+        }
+      };
+  
+      document.addEventListener('click', handleClickOutside, true);
+      return () => {
+        document.removeEventListener('click', handleClickOutside, true);
+      };
+    }, []);
 
     function deleteFromCart(id) {
       let newCartItems = cartItems.filter((item) => item.id !== id);
@@ -126,7 +141,7 @@ export default function Cart() {
     }
 
     return (
-        <div className={`cart ${cartOpen ? '-opened' : '-closed'}`}>
+        <div ref={cartRef} className={`cart ${cartOpen ? '-opened' : '-closed'}`}>
             {cartItems.map((item) => (
                 <div className="cart-item" key={item.slug}>
                     <div className="product-info_thumbnail">
