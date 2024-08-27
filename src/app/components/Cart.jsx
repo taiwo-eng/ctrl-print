@@ -7,9 +7,15 @@ import { useRouter } from 'next/navigation'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 export default function Cart() {
-    const { cartItems, cartOpen } = useContext(CartItemsContext);
+    const { cartItems, cartOpen, setCartItems } = useContext(CartItemsContext);
     const [showPaypal, setShowPaypal] = useState(false)
     const router = useRouter();
+
+    function deleteFromCart(id) {
+      let newCartItems = cartItems.filter((item) => item.id !== id);
+      setCartItems(newCartItems);
+    }
+
     const initialOptions = {
         "client-id": process.env.PAYPAL_CLIENT_ID,
         "enable-funding": "venmo",
@@ -131,7 +137,7 @@ export default function Cart() {
                         <p>${item.price}</p>
                     </div>
                     </div>
-                    <div className="remove-item">X</div>
+                    <div onClick={() => deleteFromCart(item.id)} className="remove-item">X</div>
                 </div>
             ))}
 
