@@ -4,6 +4,10 @@ export function Marquee() {
             <p>
             <span className="asterisk">*</span>
             <span>
+             INTRODUCING THE YOSOLA EDIT
+            </span>
+            <span className="asterisk">*</span>
+            <span>
              MADE IN AFRICA 
             </span>
             <span className="asterisk">*</span>
@@ -20,12 +24,12 @@ export function Marquee() {
             </span>
             <span className="asterisk">*</span>
             <span>
-            15% OFF YOUR FIRST ORDER
+            FREE SHIPPING ON ORDERS $150+
             </span>
             <span className="asterisk">*</span>
-            <span>
+            {/* <span>
             JOIN OUR MAILING LIST
-            </span>
+            </span> */}
             </p>
         </div>
     )
