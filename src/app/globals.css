@@ -209,7 +209,7 @@ a {
 
   .product-card__container {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(4, auto);
     justify-items: center;
     row-gap: 10px;
   }
