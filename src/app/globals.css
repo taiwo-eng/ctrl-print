@@ -461,6 +461,21 @@ a {
     font-size: 2em;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .homepage-products {
+    .product-card__container {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+
+  .you-might-also-like {
+    .product-card__container {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+}
 /* media query for responsive mobile design */
 @media screen and (max-width: 430px) {
   body {
