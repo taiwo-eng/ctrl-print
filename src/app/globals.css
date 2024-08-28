@@ -378,7 +378,11 @@ a {
     border-radius: 8px;
   }
   .product-card .name {
-    line-height: 32px;
+    margin-bottom: 0;
+    padding-left: 12px;
+  }
+  .product-card .price {
+    margin-top: 10px;
     padding-left: 12px;
   }
 }
