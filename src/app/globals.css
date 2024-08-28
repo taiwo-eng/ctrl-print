@@ -462,7 +462,7 @@ a {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1366px) {
   .homepage-products {
     .product-card__container {
       grid-template-columns: repeat(3, auto);
