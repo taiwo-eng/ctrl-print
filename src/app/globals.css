@@ -463,6 +463,12 @@ a {
 }
 
 @media screen and (max-width: 1366px) {
+  .marquee p .asterisk {
+    height: 40px;
+  }
+  .marquee p span {
+    font-size: 0.7em;
+  }
   .homepage-products {
     .product-card__container {
       grid-template-columns: repeat(3, auto);
