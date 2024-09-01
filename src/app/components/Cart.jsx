@@ -52,7 +52,6 @@ export default function Cart() {
         return {
           name: item.name,
           quantity: item.quantity,
-          id: item.id,
           unit_amount: item.unit_amount,
           description: item.description
         }
