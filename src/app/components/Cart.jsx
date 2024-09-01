@@ -42,7 +42,7 @@ export default function Cart() {
       };
 
     function calculateSubtotal() {
-        const sumWithInitial = cartItems.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue.price),
+        const sumWithInitial = cartItems.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue.unit_amount),
         0)
         return sumWithInitial;
     }
