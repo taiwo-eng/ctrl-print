@@ -54,7 +54,7 @@ export default function Cart() {
           quantity: item.quantity,
           unit_amount: {
             value: item.unit_amount,
-            currency: "USD"
+            currency_code: "USD"
           },
           description: item.description
         }
