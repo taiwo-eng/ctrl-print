@@ -17,7 +17,12 @@ export function ProductDetail({ params }) {
 
     function handleAddToCart () {
         const id = window.crypto.randomUUID();
-        setCartItems((prevState) => ([...prevState, {id, slug: params.slug[0], item: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`, price: `${200}.${params.slug[0]}0`, quantity: itemCount}]))
+        setCartItems((prevState) => ([...prevState, {id, 
+            slug: params.slug[0], 
+            name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
+            description: products[params.slug[0] - 1].description,
+            unit_amount: `${200}.${params.slug[0]}0`, 
+            quantity: itemCount}]))
     }
     return (
         <>

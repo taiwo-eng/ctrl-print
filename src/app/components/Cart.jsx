@@ -48,6 +48,15 @@ export default function Cart() {
     }
 
     async function handleCreateOrder() {
+      const payPalCart = cartItems.map((item) => {
+        return {
+          name: item.name,
+          quantity: item.quantity,
+          id: item.id,
+          unit_amount: item.unit_amount,
+          description: item.description
+        }
+      })
         try {
             const response = await fetch("https://createorder-6sl3ws34aa-uc.a.run.app", {
               method: "POST",
@@ -57,12 +66,7 @@ export default function Cart() {
               // use the "body" param to optionally pass additional order information
               // like product ids and quantities
               body: JSON.stringify({
-                cart: [
-                  {
-                    id: "YOUR_PRODUCT_ID",
-                    quantity: "YOUR_PRODUCT_QUANTITY",
-                  },
-                ],
+                cart: payPalCart,
               }),
             });
 
@@ -112,7 +116,7 @@ export default function Cart() {
                 // recoverable state, per https://developer.paypal.com/docs/checkout/standard/customize/handle-funding-failures/
                 return actions.restart();
               } else if (errorDetail) {
-                router.push('/checkout/error')
+                router.push('/checkout/error');
                 // (2) Other non-recoverable errors -> Show a failure message
                 throw new Error(
                   `${errorDetail.description} (${orderData.debug_id})`
@@ -133,6 +137,7 @@ export default function Cart() {
                 );
               }
             } catch (error) {
+              router.push('/checkout/error');
               console.error(error);
               console.log(
                 `Sorry, your transaction could not be processed...${error}`
@@ -147,9 +152,9 @@ export default function Cart() {
                     <div className="product-info_thumbnail">
                     <Image className="thumbnail" src={`/images/products/product-${item.slug}.JPG`} width={113} height={113} alt="Product Thumbnail" />
                     <div className="info">
-                        <p>{item.item.split("%20").join(" ")}</p>
-                        <p>{item.size}</p>
-                        <p>${item.price}</p>
+                        <p>{item.name.split("%20").join(" ")}</p>
+                        <p>{item.quantity}</p>
+                        <p>${item.unit_amount}</p>
                     </div>
                     </div>
                     <div onClick={() => deleteFromCart(item.id)} className="remove-item">X</div>
