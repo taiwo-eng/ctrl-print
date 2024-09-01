@@ -53,7 +53,7 @@ export default function Cart() {
           name: item.name,
           quantity: item.quantity,
           unit_amount: {
-            value: item.unit_amount,
+            value: parseFloat(item.unit_amount),
             currency_code: "USD"
           },
           description: item.description.split('.')[0]
