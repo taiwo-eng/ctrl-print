@@ -56,7 +56,7 @@ export default function Cart() {
             value: item.unit_amount,
             currency_code: "USD"
           },
-          description: item.description
+          description: item.description.split('.')[0]
         }
       })
         try {
