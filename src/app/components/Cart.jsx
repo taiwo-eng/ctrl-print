@@ -52,7 +52,10 @@ export default function Cart() {
         return {
           name: item.name,
           quantity: item.quantity,
-          unit_amount: item.unit_amount,
+          unit_amount: {
+            value: item.unit_amount,
+            currency: "USD"
+          },
           description: item.description
         }
       })
