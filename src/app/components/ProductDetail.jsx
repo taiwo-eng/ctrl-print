@@ -12,17 +12,30 @@ export function ProductDetail({ params }) {
         l: false,
         xl: false
     });
-    const { setCartItems } = useContext(CartItemsContext);
+    const { setCartItems, cartItems } = useContext(CartItemsContext);
     const { products } = useContext(ProductItemsContext);
 
-    function handleAddToCart () {
+    function handleAddToCart (slug) {
         const id = window.crypto.randomUUID();
-        setCartItems((prevState) => ([...prevState, {id, 
-            slug: params.slug[0], 
-            name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
-            description: products[params.slug[0] - 1].description,
-            unit_amount: `${200}.${params.slug[0]}0`, 
-            quantity: itemCount}]))
+        const itemExists = cartItems.find(item => item.slug == slug)
+        if (itemExists) {
+            const updatedCart = cartItems.filter((item) => item.slug !== itemExists.slug);
+            setCartItems((prevState) => ([...updatedCart, {
+                id: itemExists.id, 
+                slug: itemExists.slug, 
+                name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
+                description: itemExists.description,
+                unit_amount: itemExists.unit_amount, 
+                quantity: itemExists.quantity + itemCount}]))
+        } else {
+            setCartItems((prevState) => ([...prevState, {
+                id, 
+                slug: params.slug[0], 
+                name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
+                description: products[params.slug[0] - 1].description,
+                unit_amount: `${200}.${params.slug[0]}0`, 
+                quantity: itemCount}]))
+        }
     }
     return (
         <>
@@ -43,7 +56,7 @@ export function ProductDetail({ params }) {
             </div>
             <div className='price_add-to-cart'>
                 <p className='item-price'>$200</p>
-                <p className='add-to-cart' onClick={() => handleAddToCart()}>ADD TO CART</p>
+                <p className='add-to-cart' onClick={() => handleAddToCart(params.slug[0])}>ADD TO CART</p>
             </div>
             </div>
             <div className='image-gallery'>

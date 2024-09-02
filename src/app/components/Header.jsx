@@ -11,6 +11,12 @@ import Cart from "./Cart";
 export function Header() {
   const pathname = usePathname();
   const { cartItems, cartOpen, setCartOpen } = useContext(CartItemsContext);
+
+  function calculateCartQuantity() {
+    const sumWithInitial = cartItems.reduce((accumulator, currentValue) => accumulator + (currentValue.quantity),
+    0)
+    return sumWithInitial;
+}
   return (
     <>
       <header className="header">
@@ -21,7 +27,7 @@ export function Header() {
             </Link>
       </div>
         <div className="toggle-cart">
-          <p onClick={() => setCartOpen(!cartOpen)}>CART  &nbsp; &nbsp; {cartItems.length}</p>
+          <p onClick={() => setCartOpen(!cartOpen)}>CART  &nbsp; &nbsp; {calculateCartQuantity()}</p>
           {cartOpen && <Cart />}
         </div>
       </header>

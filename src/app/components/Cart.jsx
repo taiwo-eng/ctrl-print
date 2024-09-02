@@ -42,9 +42,9 @@ export default function Cart() {
       };
 
     function calculateSubtotal() {
-        const sumWithInitial = cartItems.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue.unit_amount),
+        const sumWithInitial = cartItems.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue.unit_amount * currentValue.quantity),
         0)
-        return sumWithInitial;
+        return Number(sumWithInitial).toFixed(2);
     }
 
     async function handleCreateOrder() {
@@ -156,7 +156,7 @@ export default function Cart() {
                     <Image className="thumbnail" src={`/images/products/product-${item.slug}.JPG`} width={113} height={113} alt="Product Thumbnail" />
                     <div className="info">
                         <p>{item.name.split("%20").join(" ")}</p>
-                        <p>{item.quantity}</p>
+                        <p>Qty: {item.quantity}</p>
                         <p>${item.unit_amount}</p>
                     </div>
                     </div>
