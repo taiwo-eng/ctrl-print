@@ -46,7 +46,9 @@ export default function ProductContext({
 
         {name: 'Yosola Mini Bubu: Adire mini gown', color: 'Multicoloured', id: '15', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '200'},
 
-        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '16', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '200'}
+        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '16', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '200'},
+
+        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '17', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '200'}
     
     ]);
     return (

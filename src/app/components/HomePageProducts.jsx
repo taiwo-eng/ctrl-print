@@ -13,7 +13,7 @@ export function HomePageProducts () {
             <h2>Welcome to my store</h2>
             <ProductCard products={products} exclude={0} limit={products.length - 8} />
             <h2>Accessories</h2>
-            <ProductCard products={jewelryProducts} exclude={0} limit={17} />
+            <ProductCard products={jewelryProducts} exclude={0} limit={18} />
         </div>
     )
 }
