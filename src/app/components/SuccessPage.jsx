@@ -18,14 +18,14 @@ export default function CheckoutSuccess() {
                     <h4>PAYMENT METHOD</h4>
                     <p>{checkoutItems.paymentMethod}</p>
                     <h4>TOTAL</h4>
-                    <p>{`$${checkoutItems.orderTotal}`}</p>
+                    <p>${checkoutItems.orderTotal}</p>
                 </div>
             <h2>Order details</h2>
             <div className='order-details'>
             <div className='product-details'>
             <div className='item-detail'>
             <h5>Product</h5>
-            {checkoutItems.items.map(item => (
+            {checkoutItems?.items?.map(item => (
                 <div key={item.id}>
                     <span>{item.name}</span> x <span>{item.quantity}</span>
                 </div>
@@ -33,7 +33,7 @@ export default function CheckoutSuccess() {
             </div>
             <div className='item-detail'>
             <h5>Total</h5>
-            {checkoutItems.items.map(item => (
+            {checkoutItems?.items?.map(item => (
                 <div key={item.id}>
                     <p>{`$${item.unit_amount * item.quantity}`}</p>
                 </div>
