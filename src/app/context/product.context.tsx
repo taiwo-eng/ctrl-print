@@ -29,26 +29,12 @@ export default function ProductContext({
 
 
         // JEWELRY 
-
-        {name: 'Yosola Bubu: Geometric Midi Gown', color: 'Blue', id: '8', description: "Our Yosola Adire gown is a stunning fusion of contemporary style and West African artistry. Ethically dyed and crafted from soft, breathable cotton, this dress is a wardrobe essential that radiates elegance and cultural richness.This dress features a Vibrant blue color with geometric circle patterns, and a contrasting blush bib.", price: '200'}, 
+        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '17', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '25'},
 
         {name: 'Yosola Bubu: Multicolour Gown', color: 'Green, Orange, & Blue', id: '9', description: "Our Yosola Adire gown is a stunning fusion of contemporary style and West African artistry. Ethically dyed and crafted from soft, breathable cotton, this dress is a wardrobe essential that radiates elegance and cultural richness. The eye-catching Orange, Green and blue prints are guaranteed to elevate every wardrobe.", price: '110'}, 
 
-        {name: 'Yosola Bubu: Geometric Midi Gown', color: 'Mustard', id: '10', description: "Our Yosola Adire gown is a stunning fusion of contemporary style and West African artistry. Ethically dyed and crafted from soft, breathable cotton, this dress is a wardrobe essential that radiates elegance and cultural richness. This eye-catching piece, made from pure cotton, features a rich mustard palette with intricate geometric patterns.", price: '200'}, 
-
-        {name: 'Yosola Bubu: XO Pattern multicolour Gown', color: 'Green, Orange, Purple, & Pink', id: '11', description: "Our Yosola Adire gown is a stunning fusion of contemporary style and West African artistry. Ethically dyed and crafted from soft, breathable cotton, this dress is a wardrobe essential that radiates elegance and cultural richness. The fabric has a repeating pattern of intersecting 'X' and 'O' shapes, arranged in a grid-like formation. A geometric design that gives the fabric a lively and modern look.", price: '200'}, 
-
-        {name: 'Yosola Bubu: Geometric Midi Gown', color: 'Black', id: '12', description: "Our Yosola Adire gown is a stunning fusion of contemporary style and West African artistry. Ethically dyed and crafted from soft, breathable cotton, this dress is a wardrobe essential that radiates elegance and cultural richness. This versatile yet sophisticated ,and bold print easily transitions from day to night is your new wardrobe staple.", price: '200'},
-
-        {name: 'Yosola Mini Bubu: Adire mini gown', color: 'Multicoloured', id: '13', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '200'},
-
         {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '14', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '50'},
 
-        {name: 'Yosola Mini Bubu: Adire mini gown', color: 'Multicoloured', id: '15', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '200'},
-
-        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '16', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '200'},
-
-        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '17', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '25'}
     
     ]);
     return (
