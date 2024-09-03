@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext } from 'react';
-import { CheckoutItemsContext } from '../../context/checkout.context';
+import { CheckoutItemsContext } from '.././context/checkout.context';
 
 export default function CheckoutSuccess() {
     const { checkoutItems } = useContext(CheckoutItemsContext);
