@@ -5,9 +5,11 @@ import { CartItemsContext } from "../context/cart.context";
 import Image from "next/image";
 import { useRouter } from 'next/navigation'
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { CheckoutItemsContext } from "../context/checkout.context";
 
 export default function Cart() {
     const { cartItems, cartOpen, setCartItems, setCartOpen } = useContext(CartItemsContext);
+    const { setCheckoutItems } = useContext(CheckoutItemsContext)
     const [showPaypal, setShowPaypal] = useState(false)
     const router = useRouter();
     const cartRef = useRef(null);
@@ -74,7 +76,6 @@ export default function Cart() {
             });
 
             const orderData = await response.json();
-
             if (orderData.id) {
               return orderData.id;
             } else {
@@ -125,6 +126,15 @@ export default function Cart() {
                   `${errorDetail.description} (${orderData.debug_id})`
                 );
               } else {
+                const date = new Date();
+                const orderDate = date.toLocaleDateString()
+                setCheckoutItems(() => ({
+                  orderID: data.orderID,
+                  orderDate,
+                  orderTotal: calculateSubtotal(),
+                  paymentMethod: 'PAYPAL',
+                  items: cartItems
+                }));
                 router.push('/checkout/success')
                 // (3) Successful transaction -> Show confirmation or thank you message
                 // Or go to another URL:  actions.redirect('thank_you.html');

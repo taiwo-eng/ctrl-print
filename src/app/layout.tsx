@@ -3,6 +3,7 @@ import { Header } from "./components";
 import { Footer } from "./components/Footer";
 import CartContext from "./context/cart.context";
 import ProductContext from "./context/product.context";
+import CheckoutContext from "./context/checkout.context";
 
 
 export default function RootLayout({
@@ -18,11 +19,13 @@ export default function RootLayout({
       </head>
       <body>
         <ProductContext>
-          <CartContext>
-            <Header />
-            {children}
-            <Footer />
-          </CartContext>
+          <CheckoutContext>
+            <CartContext>
+              <Header />
+              {children}
+              <Footer />
+            </CartContext>
+          </CheckoutContext>
         </ProductContext>
       </body>
     </html>
