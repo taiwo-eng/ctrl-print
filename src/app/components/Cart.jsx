@@ -135,6 +135,8 @@ export default function Cart() {
                   paymentMethod: 'PAYPAL',
                   items: cartItems
                 }));
+                setCartOpen(false);
+                setCartItems([]);
                 router.push('/checkout/success')
                 // (3) Successful transaction -> Show confirmation or thank you message
                 // Or go to another URL:  actions.redirect('thank_you.html');
