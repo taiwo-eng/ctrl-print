@@ -11,7 +11,7 @@ export function HomePageProducts () {
     return (
         <div className="homepage-products">
             <h2>Welcome to my store</h2>
-            <ProductCard products={products} exclude={0} limit={products.length - 8} />
+            <ProductCard products={products} exclude={0} limit={products.length - 9} />
             <h2>Accessories</h2>
             <ProductCard products={jewelryProducts} exclude={0} limit={18} />
         </div>
