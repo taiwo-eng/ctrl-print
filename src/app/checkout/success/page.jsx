@@ -26,7 +26,7 @@ export default function SuccessPage() {
             <div className='product-details'>
             <div className='item-detail'>
             <h5>Product</h5>
-            {checkoutItems.items.map(item => (
+            {checkoutItems?.items.map(item => (
                 <div key={item.id}>
                     <span>{item.name}</span> x <span>{item.quantity}</span>
                 </div>
@@ -34,7 +34,7 @@ export default function SuccessPage() {
             </div>
             <div className='item-detail'>
             <h5>Total</h5>
-            {checkoutItems.items.map(item => (
+            {checkoutItems?.items.map(item => (
                 <div key={item.id}>
                     <p>{`$${item.unit_amount * item.quantity}`}</p>
                 </div>
