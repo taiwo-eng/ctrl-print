@@ -2,7 +2,15 @@
 
 import React, { createContext, useState } from 'react';
 
-export const CheckoutItemsContext = createContext({})
+export const CheckoutItemsContext = createContext({
+    checkoutItems: {
+            orderID: '',
+            orderDate: '',
+            paymentMethod: '',
+            orderTotal: 0,
+            items: []
+        }
+})
 
 export default function CheckoutContext({
     children,
