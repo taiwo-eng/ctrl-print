@@ -1,0 +1,78 @@
+.checkout-form {
+    margin: 0 14%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.payment-methods {
+    display: flex;
+    column-gap: 32px;
+    margin-bottom: 32px;
+}
+
+.payment-method-card {
+    width: 300px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2c2c2c;
+    cursor: pointer;
+    border-radius: 22px;
+}
+
+.address-form-container {
+    width: fit-content;
+    height: fit-content;
+}
+.address-form-container label span, .address-form-container label input {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.address-form-container label input {
+    width: 300px;
+    height: 36px;
+    padding-left: 24px;
+}
+
+.address-form-container .address-user-name {
+    display: flex;
+    column-gap: 36px;
+    justify-content: space-between;
+}
+
+.order-details, .bank-transfer-instruction, .personal-data-policy {
+    width: 400px;
+    background: #ededed;
+    padding: 16px;
+    margin-bottom: 32px;
+}
+
+.order-details .product-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-detail span {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.cart-checkout {
+    padding: 10px 0;
+    background: #9E4920;
+    color: #FFFFFF;
+    text-decoration: underline;
+    text-align: center;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    cursor: pointer;
+  }

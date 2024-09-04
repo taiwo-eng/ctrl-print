@@ -1,17 +1,14 @@
 "use client";
 
-import { useContext, useState, useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { CartItemsContext } from "../context/cart.context";
 import Image from "next/image";
-import { useRouter } from 'next/navigation'
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import Link from 'next/link';
 import { CheckoutItemsContext } from "../context/checkout.context";
 
 export default function Cart() {
     const { cartItems, cartOpen, setCartItems, setCartOpen } = useContext(CartItemsContext);
-    const { setCheckoutItems } = useContext(CheckoutItemsContext)
-    const [showPaypal, setShowPaypal] = useState(false)
-    const router = useRouter();
+    const { setCheckoutItems } = useContext(CheckoutItemsContext);
     const cartRef = useRef(null);
 
     useEffect(() => {
@@ -33,132 +30,12 @@ export default function Cart() {
       setCartItems(newCartItems);
     }
 
-    const initialOptions = {
-        "client-id": process.env.PAYPAL_CLIENT_ID,
-        "enable-funding": "venmo",
-        "disable-funding": "",
-        "currency": "USD",
-        "data-page-type": "product-details",
-        "components": "buttons",
-        "data-sdk-integration-source": "developer-studio",
-      };
-
     function calculateSubtotal() {
         const sumWithInitial = cartItems.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue.unit_amount * currentValue.quantity),
         0)
         return Number(sumWithInitial).toFixed(2);
     }
 
-    async function handleCreateOrder() {
-      const payPalCart = cartItems.map((item) => {
-        return {
-          name: item.name,
-          quantity: item.quantity,
-          unit_amount: {
-            // value: parseFloat(item.unit_amount),
-            value: 1,
-            currency_code: "USD"
-          },
-          description: item.description.split('.')[0]
-        }
-      })
-        try {
-            const response = await fetch("https://createorder-6sl3ws34aa-uc.a.run.app", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              // use the "body" param to optionally pass additional order information
-              // like product ids and quantities
-              body: JSON.stringify({
-                cart: payPalCart,
-              }),
-            });
-
-            const orderData = await response.json();
-            if (orderData.id) {
-              return orderData.id;
-            } else {
-              const errorDetail = orderData?.details?.[0];
-              const errorMessage = errorDetail
-                ? `${errorDetail.issue} ${errorDetail.description} (${orderData.debug_id})`
-                : JSON.stringify(orderData);
-
-              throw new Error(errorMessage);
-            }
-          } catch (error) {
-            console.error(error);
-          }
-    }
-
-    async function handleApproveOrder(data, actions) {
-            try {
-              const response = await fetch(
-                `https://captureorder-6sl3ws34aa-uc.a.run.app`,
-                {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    orderID: `${data.orderID}`
-                  })
-                }
-              );
-
-              const orderData = await response.json();
-              // Three cases to handle:
-              //   (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
-              //   (2) Other non-recoverable errors -> Show a failure message
-              //   (3) Successful transaction -> Show confirmation or thank you message
-
-              const errorDetail = orderData?.details?.[0];
-
-              if (errorDetail?.issue === "INSTRUMENT_DECLINED") {
-                router.push('/checkout/error')
-                // (1) Recoverable INSTRUMENT_DECLINED -> call actions.restart()
-                // recoverable state, per https://developer.paypal.com/docs/checkout/standard/customize/handle-funding-failures/
-                return actions.restart();
-              } else if (errorDetail) {
-                router.push('/checkout/error');
-                // (2) Other non-recoverable errors -> Show a failure message
-                throw new Error(
-                  `${errorDetail.description} (${orderData.debug_id})`
-                );
-              } else {
-                const date = new Date();
-                const orderDate = date.toLocaleDateString()
-                setCheckoutItems(() => ({
-                  orderID: data.orderID,
-                  orderDate,
-                  orderTotal: calculateSubtotal(),
-                  paymentMethod: 'PAYPAL',
-                  items: cartItems
-                }));
-                setCartOpen(false);
-                setCartItems([]);
-                router.push('/checkout/success')
-                // (3) Successful transaction -> Show confirmation or thank you message
-                // Or go to another URL:  actions.redirect('thank_you.html');
-                const transaction =
-                  orderData.purchase_units[0].payments.captures[0];
-                console.log(
-                  `Transaction ${transaction.status}: ${transaction.id}. See console for all available details`
-                );
-                console.log(
-                  "Capture result",
-                  orderData,
-                  JSON.stringify(orderData, null, 2)
-                );
-              }
-            } catch (error) {
-              router.push('/checkout/error');
-              console.error(error);
-              console.log(
-                `Sorry, your transaction could not be processed...${error}`
-              );
-            }
-    }
 
     return (
         <div ref={cartRef} className={`cart ${cartOpen ? '-opened' : '-closed'}`}>
@@ -189,18 +66,20 @@ export default function Cart() {
                 </div>
             </div>
             <div className="cart-checkout">
-                {!showPaypal ? <p onClick={() => setShowPaypal(!showPaypal)}>CHECKOUT</p> : <PayPalScriptProvider options={initialOptions}>
-                    <PayPalButtons
-                        style={{
-                            shape: "rect",
-                            layout: "vertical",
-                            color: "gold",
-                            label: "checkout",
-                        }}
-                        createOrder={handleCreateOrder}
-                        onApprove={handleApproveOrder}
-                        />
-             </PayPalScriptProvider>}
+            <p onClick={() => {
+              const date = new Date();
+              const orderDate = date.toLocaleDateString()
+              setCartOpen(false);
+              setCheckoutItems(() => ({
+                orderID: '',
+                orderDate,
+                orderTotal: calculateSubtotal(),
+                paymentMethod: 'Zelle',
+                items: cartItems
+              }));
+            }}>
+              <Link href="/checkout/form">CHECKOUT</Link>
+            </p>
             </div>
         </div>
     )

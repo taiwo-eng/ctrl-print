@@ -33,7 +33,7 @@ export function ProductDetail({ params }) {
                 slug: params.slug[0], 
                 name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
                 description: products[params.slug[0] - 1].description,
-                unit_amount: `${200}.${params.slug[0]}0`, 
+                unit_amount: `${products[params.slug[0] - 1].price}`, 
                 quantity: itemCount}]))
         }
     }
@@ -55,7 +55,7 @@ export function ProductDetail({ params }) {
                 </div>
             </div>
             <div className='price_add-to-cart'>
-                <p className='item-price'>$200</p>
+                <p className='item-price'>{`$${products[params.slug[0] - 1].price}`}</p>
                 <p className='add-to-cart' onClick={() => handleAddToCart(params.slug[0])}>ADD TO CART</p>
             </div>
             </div>
