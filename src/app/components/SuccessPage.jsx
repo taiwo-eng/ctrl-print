@@ -68,7 +68,7 @@ export default function CheckoutSuccess() {
                     <h3>Shipping Details</h3>
                     <>
                     {address.useBillingAsShipping ? <>
-                        <p>{address.billingAddress.firstName} &nbsp; {address.billingAddress.firstName}</p>
+                        <p>{address.billingAddress.firstName} &nbsp; {address.billingAddress.lastName}</p>
                         <p>{address.billingAddress.houseNumber} &nbsp; {address.billingAddress.street}</p>
                         <p>{address.billingAddress.city}</p>
                         <p>{address.billingAddress.state} &nbsp; {address.billingAddress.country}</p>
