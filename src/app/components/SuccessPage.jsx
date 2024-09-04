@@ -56,7 +56,7 @@ export default function CheckoutSuccess() {
             {checkoutItems.paymentMethod === 'Zelle' && <div className='billling-shipping-details'>
                 <div className='billing-details'>
                     <h3>Billing Details</h3>
-                    <p>{address.billingAddress.firstName} &nbsp; {address.billingAddress.firstName}</p>
+                    <p>{address.billingAddress.firstName} &nbsp; {address.billingAddress.lastName}</p>
                     <p>{address.billingAddress.houseNumber} &nbsp; {address.billingAddress.street}</p>
                     <p>{address.billingAddress.city}</p>
                     <p>{address.billingAddress.state} &nbsp; {address.billingAddress.country}</p>
