@@ -65,6 +65,7 @@ export default function Cart() {
                     </p>
                 </div>
             </div>
+            <Link href="/checkout/form" className="checkout-link">
             <div className="cart-checkout">
             <p onClick={() => {
               const date = new Date();
@@ -78,9 +79,10 @@ export default function Cart() {
                 items: cartItems
               }));
             }}>
-              <Link href="/checkout/form">CHECKOUT</Link>
+              CHECKOUT
             </p>
             </div>
+            </Link>
         </div>
     )
 }

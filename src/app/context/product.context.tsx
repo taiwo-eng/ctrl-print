@@ -29,11 +29,11 @@ export default function ProductContext({
 
 
         // JEWELRY 
-        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '17', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '25'},
+        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '8', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '25'},
 
         {name: 'Yosola Bubu: Multicolour Gown', color: 'Green, Orange, & Blue', id: '9', description: "Our Yosola Adire gown is a stunning fusion of contemporary style and West African artistry. Ethically dyed and crafted from soft, breathable cotton, this dress is a wardrobe essential that radiates elegance and cultural richness. The eye-catching Orange, Green and blue prints are guaranteed to elevate every wardrobe.", price: '110'}, 
 
-        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '14', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '50'},
+        {name: 'Yosola Mini Bubu: Mini gown', color: 'Blue, Pink, & Green', id: '10', description: 'Our Yosola mini dress is a stylish must-have for any wardrobe. Made from comfortable cotton and showcasing our signature blend of prints and colors, this dress is designed to turn heads. Whether you wear it alone or layer it creatively, it’s a versatile piece. Add a touch of sophistication with heels, a box clutch, and bold accessories for a night out.', price: '50'},
 
     
     ]);

@@ -20,6 +20,9 @@ export default function TermsConditions() {
             <p>Kindly note that CtrlPrint is not liable for custom fees or charges in the respective countries. Should the customer not receive the package, DHL will return the package to the sender “CtrlPrint” and the return fee will be deducted accordingly before a refund is issued to the customer.</p>
             <h2>Enquiries/Customer Service</h2>
             <p>CtrlPrint seeks to provide customers with the best customer-centric experience. All inquiries will be responded to within 48 hours. Please contact us at  – <a href="mailto:shopctrlprint@gmail.com">shopctrlprint@gmail.com</a></p>
+
+
+            <a target="_blank" href="https://icons8.com/icon/Iirw95F6Nl9c/zelle">zelle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
         </section>
     )
 }

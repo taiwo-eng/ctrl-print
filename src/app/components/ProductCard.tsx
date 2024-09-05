@@ -19,7 +19,7 @@ export default function ProductCard ({ products, exclude, limit } : {products: [
 
     return (
         <div className='product-card__container'>
-            {products.filter((product) => product.id !== exclude && product.id < limit).map((product) => (
+            {products.filter((product) => product.id !== exclude && product.id <= limit).map((product) => (
                <div key={product.id} className='product-card'>
                 <Link href={`/product/${product.id}/${product.name}`}>
                     <Image src={`/images/products/product-${product.id}.JPG`} width={300} height={350} className='image' alt="Product Image" />

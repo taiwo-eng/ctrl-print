@@ -438,7 +438,9 @@ a {
 .cart-cost .shipping {
   border-bottom: 1px dotted #E9DCD5;
 }
-
+.checkout-link {
+  border-radius: inherit;
+}
 .cart-checkout {
   padding: 10px 0;
   background: #9E4920;

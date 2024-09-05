@@ -4,7 +4,7 @@ export function Marquee() {
             <p>
             <span className="asterisk">*</span>
             <span>
-             INTRODUCING THE YOSOLA EDIT
+             INTRODUCING THE YOSOLA COLLECTION
             </span>
             <span className="asterisk">*</span>
             <span>
@@ -27,9 +27,9 @@ export function Marquee() {
             FREE SHIPPING ON ORDERS $150+
             </span>
             <span className="asterisk">*</span>
-            {/* <span>
-            JOIN OUR MAILING LIST
-            </span> */}
+            <span>
+            SHIPPING STARTS SEPT 14TH
+            </span>
             </p>
         </div>
     )

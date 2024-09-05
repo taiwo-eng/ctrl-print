@@ -15,6 +15,11 @@ export function ProductDetail({ params }) {
     const { setCartItems, cartItems } = useContext(CartItemsContext);
     const { products } = useContext(ProductItemsContext);
 
+    function getProduct() {
+        const product = products.find((product) => product.id === params.slug[0]);
+        return product;
+    }
+
     function handleAddToCart (slug) {
         const id = window.crypto.randomUUID();
         const itemExists = cartItems.find(item => item.slug == slug)
@@ -32,8 +37,8 @@ export function ProductDetail({ params }) {
                 id, 
                 slug: params.slug[0], 
                 name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
-                description: products[params.slug[0] - 1].description,
-                unit_amount: `${products[params.slug[0] - 1].price}`, 
+                description: getProduct().description,
+                unit_amount: `${getProduct().price}`, 
                 quantity: itemCount}]))
         }
     }
@@ -45,7 +50,7 @@ export function ProductDetail({ params }) {
                 <p className="product-title">
                     {params.slug[1].replace('%3A', ": ").split("%20").join(" ")}
                 </p>
-                <p className="product-description">{products[params.slug[0] - 1].description}</p>
+                <p className="product-description">{getProduct().description}</p>
             </div>
             <div className='item-count_size-selection'>
                 <div className='item-count'>
@@ -55,7 +60,7 @@ export function ProductDetail({ params }) {
                 </div>
             </div>
             <div className='price_add-to-cart'>
-                <p className='item-price'>{`$${products[params.slug[0] - 1].price}`}</p>
+                <p className='item-price'>{`$${getProduct().price}`}</p>
                 <p className='add-to-cart' onClick={() => handleAddToCart(params.slug[0])}>ADD TO CART</p>
             </div>
             </div>

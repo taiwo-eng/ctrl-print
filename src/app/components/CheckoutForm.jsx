@@ -190,9 +190,7 @@ export default function CheckoutForm() {
                     </div>
 
                     <div className='payment-method-card'  onClick={() => setCheckoutMethod('Zelle')}>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill={checkoutMethod === "Zelle" ? "darkgoldenrod" : "currentColor"} className="bi bi-bank" viewBox="0 0 16 16">
-                        <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z"/>
-                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><path fill={checkoutMethod === "Zelle" ? "darkgoldenrod" : "currentColor"} d="M35,42H13c-3.866,0-7-3.134-7-7V13c0-3.866,3.134-7,7-7h22c3.866,0,7,3.134,7,7v22 C42,38.866,38.866,42,35,42z"/><path fill="#fff" d="M17.5,18.5h14c0.552,0,1-0.448,1-1V15c0-0.552-0.448-1-1-1h-14c-0.552,0-1,0.448-1,1v2.5	C16.5,18.052,16.948,18.5,17.5,18.5z"/><path fill="#fff" d="M17,34.5h14.5c0.552,0,1-0.448,1-1V31c0-0.552-0.448-1-1-1H17c-0.552,0-1,0.448-1,1v2.5	C16,34.052,16.448,34.5,17,34.5z"/><path fill="#fff" d="M22.25,11v6c0,0.276,0.224,0.5,0.5,0.5h3.5c0.276,0,0.5-0.224,0.5-0.5v-6c0-0.276-0.224-0.5-0.5-0.5	h-3.5C22.474,10.5,22.25,10.724,22.25,11z"/><path fill="#fff" d="M22.25,32v6c0,0.276,0.224,0.5,0.5,0.5h3.5c0.276,0,0.5-0.224,0.5-0.5v-6c0-0.276-0.224-0.5-0.5-0.5	h-3.5C22.474,31.5,22.25,31.724,22.25,32z"/><path fill="#fff" d="M16.578,30.938H22l10.294-12.839c0.178-0.222,0.019-0.552-0.266-0.552H26.5L16.275,30.298	C16.065,30.553,16.247,30.938,16.578,30.938z"/></svg>
                     </div>
                 </div>
                 {toggleCheckoutUI()}
@@ -225,7 +223,7 @@ export default function CheckoutForm() {
                 </div>
                 {checkoutMethod === 'Zelle' && <div className='bank-transfer-instruction'>
                 <h3>• Direct bank transfer</h3>
-                <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped unbl the funds have cleared in our account.
+                <p>Make your payment directly into <strong>Zelle ID skarunwi@gmail.com</strong>. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
                 ORDERS WOULD BE CANCELLED AFTER 12 HOURS IF PAYMENT IS NOT RECEIVED</p>
                 </div>}
 
