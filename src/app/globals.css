@@ -238,6 +238,11 @@ a {
   }
 }
 
+.full-price {
+  text-decoration: line-through;
+  padding-right: 14px;
+}
+
 .product-detail {
   margin-top: 4em;
   display: flex;

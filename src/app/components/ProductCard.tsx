@@ -7,14 +7,35 @@ export default function ProductCard ({ products, exclude, limit } : {products: [
     name: string;
     price: string;
     color: string;
+    category: string;
 }], exclude: number, limit: number}) {
 
     function formatName(product: {
         name: string;
         color: string;
+        category: string;
     }): string {
-        const [ collection, name] = product.name.split(':');
-        return `${collection}: ${product.color} ${name}`
+        if (product.category !== 'jewelry') {
+            const [ collection, name] = product.name.split(':');
+            return `${collection}: ${product.color} ${name}`
+        } else {
+            return `${product.name}`
+        }
+    }
+
+    function discountPrice(product: {
+        name: string;
+        color: string;
+        category: string;
+        price: string
+    }): number | undefined {
+        if (product.category !== 'jewelry' && product.category === 'long dress') {
+            const discountPrice = parseFloat(product.price) - (parseFloat(product.price) * 0.2);
+            return discountPrice
+        } else if (product.category !== 'jewelry' && product.category === 'short dress') {
+            const discountPrice = parseFloat(product.price) - (parseFloat(product.price) * 0.1);
+            return discountPrice
+        }
     }
 
     return (
@@ -28,7 +49,8 @@ export default function ProductCard ({ products, exclude, limit } : {products: [
                     <Link href={`/product/${product.id}/${product.name}`}>
                     {formatName(product)}
                     </Link> </p>
-                    <p className='price'>${product.price}</p>
+                    {product.category !== 'jewelry' && <p className='price'>$<span className='full-price'>{product.price}</span>  $<span>{discountPrice(product)}</span></p>}
+                    {product.category === 'jewelry' && <p className='price'>${product.price} </p>}
                </div>     
             ))}
             </div> 

@@ -20,6 +20,16 @@ export function ProductDetail({ params }) {
         return product;
     }
 
+    function discountPrice(product) {
+        if (product.category !== 'jewelry' && product.category === 'long dress') {
+            const discountPrice = parseFloat(product.price) - (parseFloat(product.price) * 0.2);
+            return discountPrice
+        } else if (product.category !== 'jewelry' && product.category === 'short dress') {
+            const discountPrice = parseFloat(product.price) - (parseFloat(product.price) * 0.1);
+            return discountPrice
+        }
+    }
+
     function handleAddToCart (slug) {
         const id = window.crypto.randomUUID();
         const itemExists = cartItems.find(item => item.slug == slug)
@@ -38,7 +48,7 @@ export function ProductDetail({ params }) {
                 slug: params.slug[0], 
                 name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
                 description: getProduct().description,
-                unit_amount: `${getProduct().price}`, 
+                unit_amount: `${discountPrice(getProduct())}`, 
                 quantity: itemCount}]))
         }
     }
@@ -60,7 +70,8 @@ export function ProductDetail({ params }) {
                 </div>
             </div>
             <div className='price_add-to-cart'>
-                <p className='item-price'>{`$${getProduct().price}`}</p>
+            {getProduct().category !== 'jewelry' && <p className='item-price'>$<span className='full-price'>{getProduct().price}</span>  $<span>{discountPrice(getProduct())}</span></p>}
+            {getProduct().category === 'jewelry' && <p className='item-price'>${getProduct().price} </p>}
                 <p className='add-to-cart' onClick={() => handleAddToCart(params.slug[0])}>ADD TO CART</p>
             </div>
             </div>
