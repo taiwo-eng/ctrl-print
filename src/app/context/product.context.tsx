@@ -31,9 +31,9 @@ export default function ProductContext({
         // JEWELRY 
         {name: 'Yosola: Cowrie Floral earrings', color: 'Gold plated', id: '8', description: 'Gold plated jewelry wire and cowrie shell', price: '25'},
 
-        {name: 'Yosola: Baroque pearls and gold set', color: 'Gold plated', id: '9', description: "Earrings with Baroque pearls set in Gold plated jewelry wire.", price: '110'}, 
-
         {name: 'Yosola: Pearl and Gold earrings', color: 'Gold plated', id: '10', description: 'Gold plated earrings with pearls', price: '50'},
+
+        {name: 'Yosola: Baroque pearls and gold set', color: 'Gold plated', id: '9', description: "Earrings with Baroque pearls set in Gold plated jewelry wire.", price: '110'}, 
 
     
     ]);

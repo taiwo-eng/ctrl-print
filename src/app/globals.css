@@ -111,6 +111,18 @@ a {
   margin-bottom: 36px;
 }
 
+.promo-banner {
+  background: #E9DCD5;
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  position: sticky;
+  top: 0;
+  padding: 10px 0;  
+  text-align: center;
+  z-index: 1001;
+}
+
 .marquee {
   background: #E9DCD5;
   width: 100%;
@@ -545,4 +557,8 @@ a {
   .footer p {
     width: 100px;
   }
+}
+
+.icon-attribution {
+  font-size: 10px;
 }

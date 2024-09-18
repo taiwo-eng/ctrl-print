@@ -19,6 +19,9 @@ export function Header() {
 }
   return (
     <>
+      {pathname !== '/checkout/success' && <div className="promo-banner">
+        END OF SUMMER SALE UP TO 20%. JOIN OUR MAILING LIST AND GET 10% OFF ACCESSORIES.
+      </div>}
       <header className="header">
         <div className="logo">
             <Link href="/">
