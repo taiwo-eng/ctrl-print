@@ -25,6 +25,41 @@ export default function CheckoutForm() {
         "data-sdk-integration-source": "developer-studio",
       };
 
+      async function handleCompleteOrder() {
+        const orderDetails = {
+          product_name: "SHOP CTRL PRINT",
+          name: address.billingAddress.firstName,
+          email: address.billingAddress.email,
+          receipt_id: checkoutItems.orderID,
+          date: checkoutItems.orderDate,
+          receipt_details: checkoutItems.items.map((item) => {
+            return {
+              description: item.name,
+              quantity: item.quantity,
+              amount: item.unit_amount * item.quantity
+            }
+          }),
+          total: checkoutItems.orderTotal,
+          support_url: "info@shopctrlprint.com",
+          company_name: "CTRL PRINT",
+          company_address: "Lagos, Nigeria"
+        };
+        try {
+          await fetch("https://completeorder-6sl3ws34aa-uc.a.run.app", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              orderDetails
+            })
+          });
+        } catch(error) {
+          console.error(error);
+        }
+        router.push('/checkout/success');
+      }
+
       async function handleCreateOrder() {
         const payPalCart = cartItems.map((item) => {
           return {
@@ -231,7 +266,7 @@ export default function CheckoutForm() {
                     <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our privacy policy.</p>
                 </div>
 
-                {checkoutMethod === 'Zelle' && <div className="cart-checkout" onClick={() => router.push('/checkout/success')}>
+                {checkoutMethod === 'Zelle' && <div className="cart-checkout" onClick={handleCompleteOrder}>
                     <p>Place Order</p>
                 </div>}
             </div>
