@@ -35,8 +35,9 @@ export const CheckoutItemsContext = createContext({
             email: '',
             phone: ''
         },
-        useBillingAsShipping: true
-    }
+        useBillingAsShipping: true,
+    },
+    promoApplied: false
 })
 
 export default function CheckoutContext({
@@ -69,10 +70,11 @@ export default function CheckoutContext({
             phone: ''
         },
         useBillingAsShipping: true
-    })
+    });
+    const [promoApplied, setPromoApplied] = useState(false)
 
     return (
-        <CheckoutItemsContext.Provider value={{checkoutItems, setCheckoutItems, address, setAddress}}>
+        <CheckoutItemsContext.Provider value={{checkoutItems, setCheckoutItems, address, setAddress, promoApplied, setPromoApplied}}>
             {children}
         </CheckoutItemsContext.Provider>
     )

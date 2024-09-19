@@ -41,15 +41,19 @@ export function ProductDetail({ params }) {
                 name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
                 description: itemExists.description,
                 unit_amount: itemExists.unit_amount, 
-                quantity: itemExists.quantity + itemCount}]))
+                quantity: itemExists.quantity + itemCount,
+                category: itemExists.category
+            }]))
         } else {
             setCartItems((prevState) => ([...prevState, {
                 id, 
                 slug: params.slug[0], 
                 name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
                 description: getProduct().description,
-                unit_amount: `${discountPrice(getProduct())}`, 
-                quantity: itemCount}]))
+                unit_amount: getProduct().category === 'jewelry' ? getProduct().price : `${discountPrice(getProduct())}`, 
+                quantity: itemCount,
+                category: getProduct().category
+            }]))
         }
     }
     return (

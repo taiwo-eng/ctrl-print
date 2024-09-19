@@ -123,6 +123,11 @@ a {
   z-index: 1001;
 }
 
+.promo-applied {
+  font-size: 12px;
+  color: darkgoldenrod; 
+}
+
 .marquee {
   background: #E9DCD5;
   width: 100%;

@@ -11,9 +11,49 @@ import AddressForm from './AddressForm';
 
 export default function CheckoutForm() {
     const [checkoutMethod, setCheckoutMethod] = useState('');
+    const [promoCode, setPromoCode] = useState('')
     const router = useRouter();
-    const { setCheckoutItems, checkoutItems, address, setAddress } = useContext(CheckoutItemsContext);
+    const { setCheckoutItems, checkoutItems, address, setAddress, promoApplied, setPromoApplied } = useContext(CheckoutItemsContext);
     const { cartItems, setCartItems, setCartOpen } = useContext(CartItemsContext);
+
+    function handlePromoCode({ target }) {
+      const items = checkoutItems.items;
+      const promoItems = items.filter((item) => item.category === 'jewelry');
+      const value = target.value.toLowerCase();
+      setPromoCode(target.value);
+      if (!promoApplied) {
+        if(value === 'first10' && promoItems.length > 0) {
+          const appliedPromoItems = promoItems.map((item) => {
+            const discountPrice = parseFloat(item.unit_amount) - (parseFloat(item.unit_amount) * 0.1);
+            return {
+              ...item,
+              unit_amount: discountPrice
+            }
+          });
+
+          for(let i = 0; i < items.length; i++) {
+            for(let j = 0; j < appliedPromoItems.length; j++) {
+              if(items[i].id === appliedPromoItems[j].id) {
+                items[i] = appliedPromoItems[j]
+              }
+            }
+          }
+          setPromoApplied(true);
+          let sumWithInitial = items.reduce((accumulator, currentValue) => accumulator + parseFloat(currentValue.unit_amount * currentValue.quantity),
+      0)
+          sumWithInitial =  Number(sumWithInitial).toFixed(2);
+          setCheckoutItems((prevState) => {
+            return {
+              ...prevState,
+              orderTotal: sumWithInitial,
+              checkoutItems: items,
+            }
+          });
+
+          
+        }
+      }
+    }
 
     const initialOptions = {
         "client-id": process.env.PAYPAL_CLIENT_ID,
@@ -191,6 +231,10 @@ export default function CheckoutForm() {
             case "Zelle":
                 return (
                     <div className='address-form-container'>
+                        <h4>Promo Code</h4>
+                        <label>
+                        <input onChange={handlePromoCode} type="text" required value={promoCode} name="promoCode" /> {promoApplied && <span className='promo-applied'>Promo Code applied!</span>}
+                        </label>
                         <h4>Billing Details</h4>
                         <AddressForm state={address.billingAddress} setState={setAddress} field={'billingAddress'} />
                         <p>Ship to same address as billing address? 

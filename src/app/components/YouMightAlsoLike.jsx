@@ -11,7 +11,7 @@ export default function YouMightAlsoLike({ exclude }) {
     return (
         <div className='you-might-also-like'>
             <p className='section-title'>You might also like</p>
-            <ProductCard products={products} exclude={exclude} limit={7} />
+            <ProductCard products={products} exclude={exclude} limit={5} />
         </div>
     )
 }
