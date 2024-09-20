@@ -4,6 +4,12 @@ import { Footer } from "./components/Footer";
 import CartContext from "./context/cart.context";
 import ProductContext from "./context/product.context";
 import CheckoutContext from "./context/checkout.context";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "CTRL PRINT",
+  description: "",
+};
 
 
 export default function RootLayout({

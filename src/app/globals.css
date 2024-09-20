@@ -105,6 +105,64 @@ a {
   font-weight: 400;
 }
 
+.mailing-list__container{
+  position: fixed;
+  z-index: 1200;
+  width: fit-content;
+  bottom: 0;
+}
+
+.sign-up-for-promo {
+  display: flex;
+}
+
+.sign-up-for-promo input {
+  outline: none;
+  width: 300px;
+  height: 40px;
+  padding-left: 16px;
+}
+
+.sign-up-for-promo .button {
+    padding: 10px 0;
+    background: #9E4920;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 26px;
+    width: 200px;
+    height: 30px;
+    border-radius: 4px;
+}
+
+.sign-up-for-promo .button p {
+  text-align: unset;
+}
+
+.sign-up-for-promo h1 {
+  width: 200px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.sign-up-for-promo h2 {
+  margin-top: 5px;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+.sign-up-for-promo h2 span {
+  font-weight: bold;
+}
+
+.sign-up-for-promo div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #c8a791;
+  width: 400px;
+}
+
 
 .home-banner {
   width: 100%;
