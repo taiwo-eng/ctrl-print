@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-
+const document = window.document;
 export default function MailingList({ showModal, setShowModal}) {
 const [userEmail, setUserEmail] = useState("");
 const modalRef = useRef(null)
