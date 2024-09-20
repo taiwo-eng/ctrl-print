@@ -1,12 +1,13 @@
 "use client"
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { CartItemsContext } from '../context/cart.context';
 
 export default function MailingList() {
 const [userEmail, setUserEmail] = useState("");
-const modalRef = useRef(null)
+const { modalRef } = useContext(CartItemsContext)
 
 async function handleMailingListOptIn() {
     if(userEmail !== "") {
@@ -53,7 +54,7 @@ useEffect(() => {
                 <Image src={`/images/products/product-9.JPG`} width={400} height={450} className='image' alt="Promo Image" />
                 <div>
                     <h1>Welcome to CTRL PRINT</h1>
-                    <h2>Drop your email for <span>10% off</span></h2>
+                    <h2>Enter your email for <span>10% off</span></h2>
                     <input type='email' value={userEmail} onChange={({ target }) => setUserEmail(target.value)} placeholder='Enter email address' />
                     <div className="button" aria-disabled={userEmail === ''} role='button' onClick={handleMailingListOptIn}>
                         <p>YES PLEASE</p>
