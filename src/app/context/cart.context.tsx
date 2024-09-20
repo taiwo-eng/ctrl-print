@@ -11,7 +11,7 @@ export default function CartContext({
     const [cartOpen, setCartOpen] = useState(false);
     const modalRef = useRef(null)
     return (
-        <CartItemsContext.Provider value={{cartItems, setCartItems, cartOpen, setCartOpen, modalRef }}>
+        <CartItemsContext.Provider value={{cartItems, setCartItems, cartOpen, setCartOpen, modalRef}}>
             {children}
         </CartItemsContext.Provider>
     )
