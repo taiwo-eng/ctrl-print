@@ -278,6 +278,7 @@ a {
 
   .contact-via-email {
     text-decoration: underline;
+    cursor: pointer;
   }
 }
 
