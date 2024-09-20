@@ -1,14 +1,16 @@
+"use client"
+
+import React from 'react';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
 
-const document = window.document;
-export default function MailingList({ showModal, setShowModal}) {
+export default function MailingList() {
 const [userEmail, setUserEmail] = useState("");
 const modalRef = useRef(null)
-// https://sendpromoemail-6sl3ws34aa-uc.a.run.app
+
 async function handleMailingListOptIn() {
     if(userEmail !== "") {
+        modalRef.current.close();
         try {
             await fetch("https://sendpromoemail-6sl3ws34aa-uc.a.run.app", {
               method: "POST",
@@ -22,17 +24,16 @@ async function handleMailingListOptIn() {
           } catch(error) {
             console.error(error);
           }
-        setShowModal(false);
     }
-    setShowModal(false);
+    modalRef.current.close();
 }
 
 useEffect(() => {
-  
+    modalRef.current.showModal();
     const handleClickOutside = (event) => {
-      if (showModal && !modalRef.current.contains(event.target)) {
-        setShowModal(false);
-      }
+    if (!modalRef.current.contains(event.target)) {
+        modalRef.current.close();
+        }
     };
 
     document.addEventListener('click', handleClickOutside, true);
@@ -44,8 +45,7 @@ useEffect(() => {
 
   return (
     <>
-      {showModal && createPortal(
-        <div ref={modalRef} className='mailing-list__container'>
+      <dialog ref={modalRef} className='mailing-list__container'>
             <div className='sign-up-for-promo'>
                 <Image src={`/images/products/product-9.JPG`} width={400} height={450} className='image' alt="Promo Image" />
                 <div>
@@ -57,9 +57,7 @@ useEffect(() => {
                     </div>
                 </div>
             </div>
-        </div>,
-        document.body
-      )}
+        </dialog>
     </>
   );
 }

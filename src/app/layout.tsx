@@ -27,6 +27,7 @@ export default function RootLayout({
         <ProductContext>
           <CheckoutContext>
             <CartContext>
+            <div id="mailingListPortal" />
               <Header />
               {children}
               <Footer />

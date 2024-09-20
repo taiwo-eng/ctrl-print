@@ -106,10 +106,9 @@ a {
 }
 
 .mailing-list__container{
-  position: fixed;
-  z-index: 1200;
   width: fit-content;
-  bottom: 0;
+  padding: 0;
+  border: none;
 }
 
 .sign-up-for-promo {

@@ -8,10 +8,9 @@ import MailingList from "./components/MailingList";
 
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(true);
   return (
     <main className="content">
-      <MailingList setShowModal={setShowModal} showModal={showModal} />
+      <MailingList />
       <Banner />
       <Marquee />
       <HomePageProducts />
