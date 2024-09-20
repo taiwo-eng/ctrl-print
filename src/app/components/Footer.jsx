@@ -13,7 +13,7 @@ export function Footer () {
                 <img src="./footer-logo.svg" alt="footer logo" />
                 <p>ALL RIGHTS RESERVED</p>
             </div>
-            <div className="mailing-list-footer" onClick={() => modalRef.current.showModal()}>
+            <div className="contact-via-email" onClick={() => modalRef.current.showModal()}>
                 <p>
                     Join our mailing list
                 </p>
