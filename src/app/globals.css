@@ -111,6 +111,16 @@ a {
   border: none;
 }
 
+.mailing-list__container .close-modal {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 600;
+  right: 0;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
 .sign-up-for-promo {
   display: flex;
 }

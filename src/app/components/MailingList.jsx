@@ -10,7 +10,7 @@ const modalRef = useRef(null)
 
 async function handleMailingListOptIn() {
     if(userEmail !== "") {
-        modalRef.current.close();
+        handleModalClose()
         try {
             await fetch("https://sendpromoemail-6sl3ws34aa-uc.a.run.app", {
               method: "POST",
@@ -28,24 +28,27 @@ async function handleMailingListOptIn() {
     modalRef.current.close();
 }
 
-useEffect(() => {
-    modalRef.current.showModal();
-    const handleClickOutside = (event) => {
-    if (!modalRef.current.contains(event.target)) {
-        modalRef.current.close();
-        }
-    };
+function handleModalClose() {
+    const mailingListModalClosed = true;
+    localStorage.setItem('mailingListModalClosed', JSON.stringify(mailingListModalClosed))
+    modalRef.current.close();
+}
 
-    document.addEventListener('click', handleClickOutside, true);
-    return () => {
-      document.removeEventListener('click', handleClickOutside, true);
-    };
+useEffect(() => {
+    function showMailingList () {
+        const hasMailingListBeenShownOnce = JSON.parse(localStorage.getItem('mailingListModalClosed'));
+        if(!hasMailingListBeenShownOnce) {
+            modalRef.current.showModal();
+        }
+    }
+    showMailingList();
   }, []);
 
 
   return (
     <>
       <dialog ref={modalRef} className='mailing-list__container'>
+            <div className='close-modal' onClick={handleModalClose}>X</div>
             <div className='sign-up-for-promo'>
                 <Image src={`/images/products/product-9.JPG`} width={400} height={450} className='image' alt="Promo Image" />
                 <div>
