@@ -1,3 +1,8 @@
+// TODO: implement ring buffer for animation loop
+// dequeue first element after an interval
+// enqueue dequeued element immediately
+
+
 export function Marquee() {
     return (
         <div className="marquee">
