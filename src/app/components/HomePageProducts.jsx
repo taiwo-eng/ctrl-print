@@ -13,11 +13,11 @@ export function HomePageProducts () {
     return (
         <div className="homepage-products">
             <h2>Fall collection</h2>
-            <ProductCard products={fallProducts} exclude={0} limit={16} />
+            <ProductCard products={fallProducts} exclude={0} limit={18} />
             <h2>Summer sales</h2>
             <ProductCard products={summerSaleProducts} exclude={0} limit={7} />
             <h2>Accessories</h2>
-            <ProductCard products={jewelryProducts} exclude={0} limit={10} />
+            <ProductCard products={jewelryProducts} exclude={0} limit={20} />
         </div>
     )
 }
