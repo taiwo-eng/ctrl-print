@@ -21,10 +21,10 @@ export function ProductDetail({ params }) {
     }
 
     function discountPrice(product) {
-        if (product.category !== 'jewelry' && product.category === 'long dress') {
+        if (product.tag === 'long dress') {
             const discountPrice = parseFloat(product.price) - (parseFloat(product.price) * 0.2);
             return discountPrice
-        } else if (product.category !== 'jewelry' && product.category === 'short dress') {
+        } else if (product.tag === 'short dress') {
             const discountPrice = parseFloat(product.price) - (parseFloat(product.price) * 0.1);
             return discountPrice
         }
@@ -50,7 +50,7 @@ export function ProductDetail({ params }) {
                 slug: params.slug[0], 
                 name: `${params.slug[1].replace('%3A', ": ").split("%20").join(" ")}`,
                 description: getProduct().description,
-                unit_amount: getProduct().category === 'jewelry' ? getProduct().price : `${discountPrice(getProduct())}`, 
+                unit_amount: (getProduct().tag !== 'long dress' || getProduct().tag !== 'short dress') ? getProduct().price : `${discountPrice(getProduct())}`, 
                 quantity: itemCount,
                 category: getProduct().category
             }]))
@@ -74,8 +74,8 @@ export function ProductDetail({ params }) {
                 </div>
             </div>
             <div className='price_add-to-cart'>
-            {getProduct().category !== 'jewelry' && <p className='item-price'>$<span className='full-price'>{getProduct().price}</span>  $<span>{discountPrice(getProduct())}</span></p>}
-            {getProduct().category === 'jewelry' && <p className='item-price'>${getProduct().price} </p>}
+            {(getProduct().tag === 'long dress' || getProduct().tag === "short dress") && <p className='item-price'>$<span className='full-price'>{getProduct().price}</span>  $<span>{discountPrice(getProduct())}</span></p>}
+            {(getProduct().tag === 'jewelry' || getProduct().tag === "fall") && <p className='item-price'>${getProduct().price} </p>}
                 <p className='add-to-cart' onClick={() => handleAddToCart(params.slug[0])}>ADD TO CART</p>
             </div>
             </div>

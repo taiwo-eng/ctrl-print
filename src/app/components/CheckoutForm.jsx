@@ -18,7 +18,7 @@ export default function CheckoutForm() {
 
     function handlePromoCode({ target }) {
       const items = checkoutItems.items;
-      const promoItems = items.filter((item) => item.category === 'jewelry');
+      const promoItems = items.filter((item) => item.tag === 'jewelry');
       const value = target.value.toLowerCase();
       setPromoCode(target.value);
       if (!promoApplied) {
