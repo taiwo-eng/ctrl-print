@@ -32,9 +32,6 @@ export function Marquee() {
             FREE SHIPPING ON ORDERS $150+
             </span>
             <span className="asterisk">*</span>
-            <span>
-            SHIPPING STARTS SEPT 14TH
-            </span>
             </p>
         </div>
     )

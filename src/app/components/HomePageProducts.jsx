@@ -17,7 +17,7 @@ export function HomePageProducts () {
             <h2>Summer sales</h2>
             <ProductCard products={summerSaleProducts} exclude={0} limit={7} />
             <h2>Accessories</h2>
-            <ProductCard products={jewelryProducts} exclude={0} limit={20} />
+            <ProductCard products={jewelryProducts} exclude={0} limit={21} />
         </div>
     )
 }
