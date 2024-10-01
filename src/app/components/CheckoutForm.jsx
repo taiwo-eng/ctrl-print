@@ -74,7 +74,7 @@ export default function CheckoutForm() {
           date: checkoutItems.orderDate,
           receipt_details: checkoutItems.items.map((item) => {
             return {
-              description: item.name,
+              description: `${item.size ? `[${item.size}] - ` : ""} ${item.name}`,
               quantity: item.quantity,
               amount: item.unit_amount * item.quantity
             }
@@ -103,7 +103,7 @@ export default function CheckoutForm() {
       async function handleCreateOrder() {
         const payPalCart = cartItems.map((item) => {
           return {
-            name: item.name,
+            name: `${item.size ? `[${item.size}] - ` : ""} ${item.name}`,
             quantity: item.quantity,
             unit_amount: {
               // value: parseFloat(item.unit_amount),
@@ -282,7 +282,7 @@ export default function CheckoutForm() {
                             <h5>Product</h5>
                                 {checkoutItems?.items?.map(item => (
                                     <div key={item.id}>
-                                        <span>{item.name}</span> x <span>{item.quantity}</span>
+                                        <span> {item.size ? `[${item.size}] - ` : ""} {item.name}</span> x <span>{item.quantity}</span>
                                     </div>
                                 ))}
                             </div>

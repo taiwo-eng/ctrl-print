@@ -31,7 +31,7 @@ export function Header() {
       </div>
         <div className="toggle-cart">
           <p onClick={() => setCartOpen(!cartOpen)}>CART  &nbsp; &nbsp; {calculateCartQuantity()}</p>
-          {cartOpen && <Cart />}
+          {cartOpen && cartItems.length > 0 && <Cart />}
         </div>
       </header>
     </>

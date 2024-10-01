@@ -466,14 +466,11 @@ a {
 .toggle-cart {
   cursor: pointer;
   position: absolute;
-    right: 32px;
-    z-index: 999;
-    background: transparent;
+  right: 32px;
+  z-index: 999;
+  background: transparent;
 }
 
-.toggle-cart p {
-  text-align: right;
-}
 
 .cart {
   background: white;

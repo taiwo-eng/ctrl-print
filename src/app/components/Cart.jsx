@@ -45,6 +45,7 @@ export default function Cart() {
                     <Image className="thumbnail" src={`/images/products/product-${item.slug}.JPG`} width={113} height={113} alt="Product Thumbnail" />
                     <div className="info">
                         <p>{item.name.split("%20").join(" ")}</p>
+                        <p>Size: {item.size}</p>
                         <p>Qty: {item.quantity}</p>
                         <p>${item.unit_amount}</p>
                     </div>
